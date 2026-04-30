@@ -6,362 +6,824 @@
 <title>Anand Zanzmeriya — Electrical Engineer</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#f5f2ec;--bg2:#ede9e1;--card:#faf8f4;--card2:#f0ece4;
-  --ink:#1a1612;--ink2:#5a5248;--ink3:#9a9088;
-  --gold:#c8a96e;--gold2:#e8c98e;--gold-bg:#f7efe0;
-  --border:rgba(26,22,18,.10);--border2:rgba(26,22,18,.06);
-  --sh-sm:0 2px 8px rgba(26,22,18,.06);
-  --sh:0 8px 32px rgba(26,22,18,.10);
-  --sh-lg:0 20px 60px rgba(26,22,18,.14);
-  --r:16px;--r-sm:10px;
-  --fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;
-  --t:.3s cubic-bezier(.4,0,.2,1);
-  --nav-h:64px;
+:root {
+  --bg: #f5f2ec;
+  --bg2: #ede9e1;
+  --card: #faf8f4;
+  --card2: #f0ece4;
+  --ink: #1a1612;
+  --ink2: #5a5248;
+  --ink3: #9a9088;
+  --gold: #c8a96e;
+  --gold2: #e8c98e;
+  --gold-bg: #f7efe0;
+  --border: rgba(26,22,18,.10);
+  --border2: rgba(26,22,18,.06);
+  --sh-sm: 0 2px 8px rgba(26,22,18,.06);
+  --sh: 0 8px 32px rgba(26,22,18,.10);
+  --sh-lg: 0 20px 60px rgba(26,22,18,.14);
+  --r: 16px;
+  --r-sm: 10px;
+  --fh: 'Syne', sans-serif;
+  --fb: 'DM Sans', sans-serif;
+  --t: .3s cubic-bezier(.4,0,.2,1);
+  --nav-h: 64px;
 }
-[data-theme="dark"]{
-  --bg:#111018;--bg2:#16141e;--card:#1c1924;--card2:#231f2e;
-  --ink:#f0eef8;--ink2:#9893aa;--ink3:#5a5570;
-  --gold:#e0b86a;--gold2:#f0d090;--gold-bg:#1e1a10;
-  --border:rgba(240,238,248,.08);--border2:rgba(240,238,248,.04);
-  --sh-sm:0 2px 8px rgba(0,0,0,.3);
-  --sh:0 8px 32px rgba(0,0,0,.4);
-  --sh-lg:0 20px 60px rgba(0,0,0,.5);
+[data-theme="dark"] {
+  --bg: #111018;
+  --bg2: #16141e;
+  --card: #1c1924;
+  --card2: #231f2e;
+  --ink: #f0eef8;
+  --ink2: #9893aa;
+  --ink3: #5a5570;
+  --gold: #e0b86a;
+  --gold2: #f0d090;
+  --gold-bg: #1e1a10;
+  --border: rgba(240,238,248,.08);
+  --border2: rgba(240,238,248,.04);
+  --sh-sm: 0 2px 8px rgba(0,0,0,.3);
+  --sh: 0 8px 32px rgba(0,0,0,.4);
+  --sh-lg: 0 20px 60px rgba(0,0,0,.5);
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--fb);background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden;transition:background var(--t),color var(--t)}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;height:auto;display:block}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--fb);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background var(--t), color var(--t);
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
 
-/* ─── PRELOADER ─── */
-#preloader{
-  position:fixed;inset:0;z-index:9999;
-  background:var(--bg);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;
-  transition:opacity .6s ease,visibility .6s ease;
-}
-#preloader.done{opacity:0;visibility:hidden;pointer-events:none}
-.pl-logo{
-  font-family:var(--fh);font-size:clamp(2rem,8vw,3.5rem);font-weight:800;
-  letter-spacing:-.06em;color:var(--ink);overflow:hidden;
-  display:flex;align-items:baseline;gap:2px;flex-wrap:wrap;justify-content:center;
-}
-.pl-char{
-  display:inline-block;
-  animation:plChar .7s cubic-bezier(.34,1.56,.64,1) both;
-}
-.pl-char:nth-child(1){animation-delay:.05s}.pl-char:nth-child(2){animation-delay:.12s}
-.pl-char:nth-child(3){animation-delay:.19s}.pl-char:nth-child(4){animation-delay:.26s}
-.pl-char:nth-child(5){animation-delay:.33s}.pl-char:nth-child(6){animation-delay:.40s}
-.pl-char:nth-child(7){animation-delay:.47s}.pl-char:nth-child(8){animation-delay:.54s}
-.pl-char:nth-child(9){animation-delay:.61s}.pl-char:nth-child(10){animation-delay:.68s}
-.pl-char:nth-child(11){animation-delay:.75s}.pl-char:nth-child(12){animation-delay:.82s}
-.pl-char:nth-child(13){animation-delay:.89s}.pl-char:nth-child(14){animation-delay:.96s}
-.pl-char:nth-child(15){animation-delay:1.03s}.pl-char:nth-child(16){animation-delay:1.10s}
-.pl-char:nth-child(17){animation-delay:1.17s}
-.pl-dot{color:var(--gold)}
-@keyframes plChar{from{opacity:0;transform:translateY(28px) scale(.9)}to{opacity:1;transform:none}}
-.pl-bar-wrap{width:min(180px,60vw);height:2px;background:var(--border);border-radius:999px;overflow:hidden}
-.pl-bar{height:100%;background:var(--gold);border-radius:999px;width:0%;animation:plBar 1.8s cubic-bezier(.4,0,.2,1) forwards;animation-delay:.5s}
-@keyframes plBar{0%{width:0%}60%{width:75%}100%{width:100%}}
-.pl-sub{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);animation:fadeIn .5s 1.2s both}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-
-/* ─── NOISE ─── */
-body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.022;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size:128px}
-
-/* ─── GRID BG ─── */
-.grid-bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.grid-bg svg{width:100%;height:100%;opacity:.04}
-[data-theme="dark"] .grid-bg svg{opacity:.07}
-
-/* ─── CURSOR (desktop only) ─── */
-.cursor,.cursor-ring{display:none}
-@media(pointer:fine){
-  .cursor{display:block;width:8px;height:8px;border-radius:50%;background:var(--gold);position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .15s,width .3s,height .3s}
-  .cursor-ring{display:block;width:32px;height:32px;border-radius:50%;border:1.5px solid var(--gold);position:fixed;pointer-events:none;z-index:9997;transform:translate(-50%,-50%);opacity:.45;transition:width .3s,height .3s,opacity .3s}
+/* ── NOISE OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .022;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 128px;
 }
 
-/* ─── NAV ─── */
-nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 clamp(1rem,4vw,2rem)}
-.nav-inner{
-  max-width:1100px;margin:0 auto;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:1.1rem 0;border-bottom:1px solid transparent;
-  transition:all var(--t);
-  gap:1rem;
+/* ── GRID BG ── */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
 }
-nav.scrolled .nav-inner{
-  background:rgba(245,242,236,.9);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  border-bottom-color:var(--border);padding:.7rem 1.25rem;border-radius:0 0 var(--r) var(--r)
-}
-[data-theme="dark"] nav.scrolled .nav-inner{background:rgba(17,16,24,.9)}
-.nav-logo{font-family:var(--fh);font-size:18px;font-weight:800;letter-spacing:-.04em;color:var(--ink);flex-shrink:0}
-.nav-logo span{color:var(--gold)}
-.nav-links{display:flex;align-items:center;gap:.2rem;list-style:none}
-.nav-links a{font-size:13px;font-weight:500;color:var(--ink2);padding:6px 13px;border-radius:999px;transition:all var(--t);white-space:nowrap}
-.nav-links a:hover{background:var(--card2);color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
-.theme-btn{width:40px;height:40px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:17px;flex-shrink:0;transition:background var(--t),transform .4s cubic-bezier(.34,1.56,.64,1)}
-.theme-btn:hover{transform:rotate(22deg) scale(1.12);background:var(--gold-bg)}
+.grid-bg svg { width: 100%; height: 100%; opacity: .04; }
+[data-theme="dark"] .grid-bg svg { opacity: .07; }
 
-/* Hamburger */
-.hamburger{
-  display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;
-  width:40px;height:40px;border-radius:var(--r-sm);background:var(--card);border:1px solid var(--border);
-  cursor:pointer;transition:background var(--t);flex-shrink:0;
+/* ── PRELOADER ── */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  transition: opacity .6s ease, visibility .6s ease;
 }
-.hamburger span{display:block;width:18px;height:2px;background:var(--ink);border-radius:999px;transition:all .35s cubic-bezier(.4,0,.2,1);transform-origin:center}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+.pl-logo {
+  font-family: var(--fh);
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -.06em;
+  color: var(--ink);
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+.pl-char { display: inline-block; animation: plChar .7s cubic-bezier(.34,1.56,.64,1) both; }
+.pl-char:nth-child(1) { animation-delay: .05s; }
+.pl-char:nth-child(2) { animation-delay: .12s; }
+.pl-char:nth-child(3) { animation-delay: .19s; color: var(--gold); }
+@keyframes plChar { from { opacity: 0; transform: translateY(28px) scale(.9); } to { opacity: 1; transform: none; } }
+.pl-bar-wrap { width: min(180px, 60vw); height: 2px; background: var(--border); border-radius: 999px; overflow: hidden; }
+.pl-bar { height: 100%; background: var(--gold); border-radius: 999px; width: 0%; animation: plBar 1.8s cubic-bezier(.4,0,.2,1) forwards; animation-delay: .5s; }
+@keyframes plBar { 0% { width: 0%; } 60% { width: 75%; } 100% { width: 100%; } }
+.pl-sub { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink3); animation: fadeIn .5s 1.2s both; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ── CURSOR ── */
+.cursor, .cursor-ring { display: none; }
+@media (pointer: fine) {
+  .cursor {
+    display: block; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--gold); position: fixed; pointer-events: none;
+    z-index: 9998; transform: translate(-50%, -50%);
+    transition: transform .15s, width .3s, height .3s;
+  }
+  .cursor-ring {
+    display: block; width: 32px; height: 32px; border-radius: 50%;
+    border: 1.5px solid var(--gold); position: fixed; pointer-events: none;
+    z-index: 9997; transform: translate(-50%, -50%);
+    opacity: .45; transition: width .3s, height .3s, opacity .3s;
+  }
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 500;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+}
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid transparent;
+  transition: all var(--t);
+  gap: 1rem;
+}
+nav.scrolled .nav-inner {
+  background: rgba(245,242,236,.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom-color: var(--border);
+  padding: .7rem 1.25rem;
+  border-radius: 0 0 var(--r) var(--r);
+}
+[data-theme="dark"] nav.scrolled .nav-inner { background: rgba(17,16,24,.92); }
+.nav-logo { font-family: var(--fh); font-size: 18px; font-weight: 800; letter-spacing: -.04em; color: var(--ink); flex-shrink: 0; }
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; align-items: center; gap: .2rem; list-style: none; }
+.nav-links a {
+  font-size: 13px; font-weight: 500; color: var(--ink2);
+  padding: 6px 13px; border-radius: 999px;
+  transition: all var(--t); white-space: nowrap;
+}
+.nav-links a:hover { background: var(--card2); color: var(--ink); }
+.nav-right { display: flex; align-items: center; gap: .5rem; flex-shrink: 0; }
+.theme-btn {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--card); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 17px; flex-shrink: 0;
+  transition: background var(--t), transform .4s cubic-bezier(.34,1.56,.64,1);
+}
+.theme-btn:hover { transform: rotate(22deg) scale(1.12); background: var(--gold-bg); }
+.hamburger {
+  display: none; flex-direction: column; justify-content: center;
+  align-items: center; gap: 5px; width: 40px; height: 40px;
+  border-radius: var(--r-sm); background: var(--card);
+  border: 1px solid var(--border); cursor: pointer;
+  transition: background var(--t); flex-shrink: 0;
+}
+.hamburger span {
+  display: block; width: 18px; height: 2px;
+  background: var(--ink); border-radius: 999px;
+  transition: all .35s cubic-bezier(.4,0,.2,1); transform-origin: center;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* Mobile drawer */
-.mobile-menu{
-  position:fixed;inset:0;top:0;z-index:499;
-  background:var(--bg);padding:calc(var(--nav-h) + 1.5rem) clamp(1rem,6vw,2rem) 2rem;
-  display:flex;flex-direction:column;gap:.5rem;
-  transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);
-  pointer-events:none;
+.mobile-menu {
+  position: fixed; inset: 0; top: 0; z-index: 499;
+  background: var(--bg);
+  padding: calc(var(--nav-h) + 1.5rem) clamp(1rem, 6vw, 2rem) 2rem;
+  display: flex; flex-direction: column; gap: .5rem;
+  transform: translateX(100%);
+  transition: transform .4s cubic-bezier(.4,0,.2,1);
+  pointer-events: none;
 }
-.mobile-menu.open{transform:translateX(0);pointer-events:all}
-.mobile-menu a{
-  font-family:var(--fh);font-size:clamp(1.6rem,7vw,2.4rem);font-weight:800;color:var(--ink);
-  letter-spacing:-.04em;padding:.4rem 0;border-bottom:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between;
-  transition:color var(--t);
+.mobile-menu.open { transform: translateX(0); pointer-events: all; }
+.mobile-menu a {
+  font-family: var(--fh); font-size: clamp(1.3rem, 5vw, 2rem);
+  font-weight: 800; color: var(--ink); letter-spacing: -.04em;
+  padding: .4rem 0; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  transition: color var(--t);
 }
-.mobile-menu a::after{content:'→';font-size:.7em;color:var(--gold);opacity:0;transform:translateX(-8px);transition:all .25s}
-.mobile-menu a:hover{color:var(--gold)}
-.mobile-menu a:hover::after{opacity:1;transform:translateX(0)}
-.mobile-menu-sub{margin-top:auto;font-size:13px;color:var(--ink3)}
+.mobile-menu a::after { content: '→'; font-size: .7em; color: var(--gold); opacity: 0; transform: translateX(-8px); transition: all .25s; }
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-menu a:hover::after { opacity: 1; transform: translateX(0); }
+.mobile-menu-sub { margin-top: auto; font-size: 13px; color: var(--ink3); }
 
-/* ─── HERO ─── */
-.hero{min-height:100svh;display:flex;align-items:center;padding:calc(var(--nav-h) + 3rem) clamp(1rem,5vw,2rem) 4rem;position:relative;overflow:hidden}
-.hero-inner{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:center}
-.hero-orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(90px);opacity:.10}
-.orb1{width:min(600px,100vw);height:min(600px,100vw);background:var(--gold);top:-150px;right:-100px}
-.orb2{width:min(350px,70vw);height:min(350px,70vw);background:#c8a96e;bottom:-80px;left:-60px;opacity:.06}
-[data-theme="dark"] .hero-orb{opacity:.16}
-.hero-left{position:relative;z-index:1;min-width:0}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--gold-bg);border:1px solid rgba(200,169,110,.3);color:var(--gold);font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:1.5rem}
-.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite;flex-shrink:0}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.7)}}
-.hero-name{font-family:var(--fh);font-size:clamp(2.4rem,6vw,5.2rem);font-weight:800;letter-spacing:-.045em;line-height:.93;color:var(--ink);margin-bottom:1.1rem}
-.hero-name .ac{color:var(--gold);display:block}
-.hero-sub{font-size:clamp(13px,2.2vw,15px);color:var(--ink2);line-height:1.75;max-width:500px;margin-bottom:2rem;font-weight:300}
-.hero-pills{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem}
-.hero-pill{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);color:var(--ink2);font-size:13px;font-weight:500;padding:8px 15px;border-radius:999px;transition:all .3s cubic-bezier(.34,1.56,.64,1)}
-.hero-pill:hover{background:var(--gold-bg);border-color:rgba(200,169,110,.4);color:var(--gold);transform:translateY(-3px)}
-.hero-pill svg{width:14px;height:14px;flex-shrink:0}
-.hero-stats{display:flex;gap:clamp(1rem,4vw,2rem);flex-wrap:wrap}
-.sn{font-family:var(--fh);font-size:clamp(1.5rem,4vw,2rem);font-weight:800;color:var(--ink);letter-spacing:-.05em;line-height:1}
-.sn em{font-style:normal;color:var(--gold)}
-.sl{font-size:11px;color:var(--ink3);margin-top:4px;font-weight:600;text-transform:uppercase;letter-spacing:.07em}
-
-/* ─── HERO RIGHT ─── */
-.hero-right{
-  position:relative;z-index:1;
-  display:flex;flex-direction:column;align-items:center;
-  padding:1rem 48px 3rem;
+/* ── HERO ── */
+.hero {
+  min-height: 100svh;
+  display: flex; align-items: center;
+  padding: calc(var(--nav-h) + 3rem) clamp(1rem, 5vw, 2rem) 4rem;
+  position: relative; overflow: hidden;
 }
-.avatar-frame{
-  width:220px;height:260px;
-  border-radius:100px 100px 70px 70px;
-  background:var(--card2);border:1px solid var(--border);
-  position:relative;overflow:hidden;
-  box-shadow:var(--sh-lg);
-  flex-shrink:0;
-  transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow var(--t);
+.hero-inner {
+  max-width: 1100px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1fr 300px;
+  gap: 3rem; align-items: center;
 }
-.avatar-inner{
-  position:absolute;inset:0;
-  display:flex;align-items:center;justify-content:center;
+.hero-orb {
+  position: absolute; border-radius: 50%;
+  pointer-events: none; filter: blur(90px); opacity: .10;
 }
-.avatar-inner img{
-  width:100%;height:100%;
-  object-fit:cover;object-position:center top;
-  display:block;
+.orb1 { width: min(600px,100vw); height: min(600px,100vw); background: var(--gold); top: -150px; right: -100px; }
+.orb2 { width: min(350px,70vw); height: min(350px,70vw); background: #c8a96e; bottom: -80px; left: -60px; opacity: .06; }
+[data-theme="dark"] .hero-orb { opacity: .16; }
+
+.hero-left { position: relative; z-index: 1; min-width: 0; }
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gold-bg); border: 1px solid rgba(200,169,110,.3);
+  color: var(--gold); font-size: 11.5px; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: 6px 14px; border-radius: 999px; margin-bottom: 1.5rem;
 }
-.avatar-frame:hover{transform:translateY(-8px);box-shadow:0 32px 80px rgba(200,169,110,.18)}
-/* Fallback letters — only visible when img fails */
-.av-letters{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  font-family:var(--fh);font-size:64px;font-weight:800;color:var(--gold);
-  letter-spacing:-5px;opacity:.35;z-index:0;
+.hero-tag::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold); animation: pulse 2s infinite; flex-shrink: 0;
 }
-.avatar-inner img + .av-letters{display:none}/* hide if img loaded */
-.av-glow{position:absolute;bottom:-40px;left:50%;transform:translateX(-50%);width:200px;height:200px;border-radius:50%;background:var(--gold);opacity:.06;filter:blur(50px);pointer-events:none;z-index:1}
-.avatar-badge{margin-top:18px;background:var(--gold);color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:8px 20px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 18px rgba(200,169,110,.45)}
-.fc{position:absolute;background:var(--card);border:1px solid var(--border);border-radius:var(--r-sm);padding:9px 13px;box-shadow:var(--sh);font-size:12px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:7px;white-space:nowrap;animation:floatY 3s ease-in-out infinite}
-.fc1{top:16px;right:0;animation-delay:0s}
-.fc2{bottom:52px;left:0;animation-delay:1.5s}
-.fc-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0}
-@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-
-/* Hero mobile avatar strip */
-.hero-mobile-strip{
-  display:none;
-  flex-direction:column;align-items:center;gap:1rem;
-  margin-bottom:2rem;
+@keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:.4; transform:scale(1.7); } }
+.hero-name {
+  font-family: var(--fh);
+  font-size: clamp(2.4rem, 6vw, 5.2rem);
+  font-weight: 800; letter-spacing: -.045em; line-height: .93;
+  color: var(--ink); margin-bottom: 1.1rem;
 }
-.hero-mobile-avatar{
-  width:110px;height:130px;
-  border-radius:55px 55px 40px 40px;
-  background:var(--card2);border:2px solid rgba(200,169,110,.3);
-  overflow:hidden;box-shadow:var(--sh);
-  display:flex;align-items:center;justify-content:center;
+.hero-name .ac { color: var(--gold); display: block; }
+.hero-sub {
+  font-size: clamp(13px, 2.2vw, 15px); color: var(--ink2);
+  line-height: 1.75; max-width: 500px;
+  margin-bottom: 2rem; font-weight: 300;
 }
-.hero-mobile-avatar img{width:100%;height:100%;object-fit:cover;object-position:center}
-.hero-mobile-badge{background:var(--gold);color:#fff;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:999px;box-shadow:0 4px 14px rgba(200,169,110,.4)}
+.hero-pills { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2.5rem; }
+.hero-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--card); border: 1px solid var(--border);
+  color: var(--ink2); font-size: 13px; font-weight: 500;
+  padding: 8px 15px; border-radius: 999px;
+  transition: all .3s cubic-bezier(.34,1.56,.64,1);
+}
+.hero-pill:hover {
+  background: var(--gold-bg); border-color: rgba(200,169,110,.4);
+  color: var(--gold); transform: translateY(-3px);
+}
+.hero-pill svg { width: 14px; height: 14px; flex-shrink: 0; }
+.hero-stats { display: flex; gap: clamp(1rem, 4vw, 2rem); flex-wrap: wrap; }
+.sn { font-family: var(--fh); font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 800; color: var(--ink); letter-spacing: -.05em; line-height: 1; }
+.sn em { font-style: normal; color: var(--gold); }
+.sl { font-size: 11px; color: var(--ink3); margin-top: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; }
 
-/* Hero anims */
-.hero-left > *{animation:slideUp .7s cubic-bezier(.34,1.56,.64,1) both}
-.hero-left > *:nth-child(1){animation-delay:.05s}
-.hero-left > *:nth-child(2){animation-delay:.12s}
-.hero-left > *:nth-child(3){animation-delay:.19s}
-.hero-left > *:nth-child(4){animation-delay:.26s}
-.hero-left > *:nth-child(5){animation-delay:.33s}
-.hero-right,.hero-mobile-strip{animation:scaleIn .8s .2s cubic-bezier(.34,1.56,.64,1) both}
-@keyframes slideUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-@keyframes scaleIn{from{opacity:0;transform:scale(.88) translateY(24px)}to{opacity:1;transform:scale(1) translateY(0)}}
+/* Desktop avatar column */
+.hero-right {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 1rem 24px 3rem;
+}
+.avatar-frame {
+  width: 220px; height: 260px;
+  border-radius: 100px 100px 70px 70px;
+  background: var(--card2); border: 1px solid var(--border);
+  position: relative; overflow: hidden;
+  box-shadow: var(--sh-lg); flex-shrink: 0;
+  transition: transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow var(--t);
+}
+.avatar-frame:hover { transform: translateY(-8px); box-shadow: 0 32px 80px rgba(200,169,110,.18); }
 
-/* ─── SECTIONS ─── */
-.section{padding:clamp(3.5rem,8vw,5.5rem) clamp(1rem,5vw,2rem);position:relative;z-index:1}
-.section-inner{max-width:1100px;margin:0 auto}
-.stripe{background:var(--bg2)}
-.eye{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.55rem}
-.eye::after{content:'';width:36px;height:1px;background:var(--gold);opacity:.5}
-.sh2{font-family:var(--fh);font-size:clamp(1.6rem,4vw,2.7rem);font-weight:800;letter-spacing:-.04em;color:var(--ink);line-height:1.05;margin-bottom:2.5rem}
-.sh2 em{font-style:normal;color:var(--gold)}
+/* ── IMAGE FIX: image sits on top, z-index above fallback letters ── */
+.avatar-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  display: block;
+  z-index: 2;
+}
+.av-letters {
+  position: absolute; inset: 0; z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--fh); font-size: 64px; font-weight: 800;
+  color: var(--gold); letter-spacing: -5px; opacity: .35;
+}
+.av-glow {
+  position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%);
+  width: 200px; height: 200px; border-radius: 50%;
+  background: var(--gold); opacity: .06; filter: blur(50px);
+  pointer-events: none; z-index: 0;
+}
+.avatar-badge {
+  margin-top: 18px; background: var(--gold); color: #fff;
+  font-size: 11px; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; padding: 8px 20px; border-radius: 999px;
+  white-space: nowrap; box-shadow: 0 4px 18px rgba(200,169,110,.45);
+}
+.fc {
+  position: absolute; background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r-sm); padding: 9px 13px; box-shadow: var(--sh);
+  font-size: 12px; font-weight: 600; color: var(--ink2);
+  display: flex; align-items: center; gap: 7px; white-space: nowrap;
+  animation: floatY 3s ease-in-out infinite;
+}
+.fc1 { top: 16px; right: 0; animation-delay: 0s; }
+.fc2 { bottom: 52px; left: 0; animation-delay: 1.5s; }
+.fc-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+@keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
-/* ─── SUMMARY ─── */
-.sum-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:clamp(1.5rem,4vw,2.5rem);box-shadow:var(--sh);position:relative;overflow:hidden}
-.sum-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2.5px;background:linear-gradient(90deg,var(--gold),var(--gold2),transparent)}
-.sum-text{font-size:clamp(14px,2.2vw,15.5px);color:var(--ink2);line-height:1.85;font-weight:300;margin-bottom:1.75rem}
-.sum-text strong{color:var(--ink);font-weight:500}
-.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1rem}
-.kpi{background:var(--bg);border:1px solid var(--border2);border-radius:var(--r-sm);padding:1.2rem 1.4rem;transition:transform var(--t),box-shadow var(--t)}
-.kpi:hover{transform:translateY(-4px);box-shadow:var(--sh-sm)}
-.kpi-val{font-family:var(--fh);font-size:clamp(1.4rem,3vw,2rem);font-weight:800;color:var(--gold);letter-spacing:-.04em;line-height:1}
-.kpi-lbl{font-size:11.5px;color:var(--ink3);margin-top:5px;font-weight:600}
-
-/* ─── SKILLS ─── */
-.skills-wrap{display:flex;flex-direction:column;gap:2rem}
-.sk-lbl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:.7rem}
-.tag-cloud{display:flex;flex-wrap:wrap;gap:.45rem}
-.s-tag{background:var(--card);border:1px solid var(--border);color:var(--ink2);font-size:13px;font-weight:500;padding:8px 16px;border-radius:999px;cursor:default;transition:all .28s cubic-bezier(.34,1.56,.64,1)}
-.s-tag:hover{background:var(--gold-bg);border-color:rgba(200,169,110,.5);color:var(--gold);transform:translateY(-3px) scale(1.05);box-shadow:0 4px 14px rgba(200,169,110,.15)}
-.s-tag.hi{background:var(--gold-bg);border-color:rgba(200,169,110,.4);color:var(--gold)}
-
-/* ─── EDUCATION ─── */
-.edu-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:clamp(1.5rem,4vw,2.5rem);box-shadow:var(--sh);display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:start;position:relative;overflow:hidden;transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow var(--t)}
-.edu-card:hover{transform:translateY(-5px);box-shadow:var(--sh-lg)}
-.edu-card::after{content:'';position:absolute;right:-50px;bottom:-50px;width:180px;height:180px;border-radius:50%;background:var(--gold);opacity:.04;pointer-events:none}
-.edu-ico{width:62px;height:62px;border-radius:var(--r-sm);background:var(--gold-bg);border:1px solid rgba(200,169,110,.3);display:flex;align-items:center;justify-content:center;font-size:27px;flex-shrink:0}
-.edu-deg{font-family:var(--fh);font-size:clamp(1.1rem,3vw,1.3rem);font-weight:800;letter-spacing:-.03em;color:var(--ink);margin-bottom:4px}
-.edu-inst{font-size:14px;color:var(--gold);font-weight:600;margin-bottom:4px}
-.edu-period{font-size:13px;color:var(--ink3);margin-bottom:1rem}
-.edu-cgpa{display:inline-flex;align-items:center;gap:6px;background:var(--gold-bg);border:1px solid rgba(200,169,110,.3);color:var(--gold);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:1.25rem}
-.c-list{display:flex;flex-wrap:wrap;gap:.4rem}
-.c-tag{background:var(--bg);border:1px solid var(--border);color:var(--ink2);font-size:12px;padding:4px 10px;border-radius:999px}
-
-/* ─── PROJECTS ─── */
-.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(290px,100%),1fr));gap:1.5rem}
-.proj-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);display:flex;flex-direction:column;transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow var(--t),border-color var(--t)}
-.proj-card:hover{transform:translateY(-9px);box-shadow:0 28px 64px rgba(200,169,110,.14),var(--sh);border-color:rgba(200,169,110,.4)}
-.proj-top{padding:clamp(1.2rem,3vw,2rem) clamp(1.2rem,3vw,2rem) 1.5rem;border-bottom:1px solid var(--border2);position:relative}
-.proj-num{position:absolute;top:1rem;right:1.25rem;font-family:var(--fh);font-size:4rem;font-weight:800;color:var(--ink);opacity:.04;line-height:1;user-select:none}
-.proj-icon{width:48px;height:48px;border-radius:var(--r-sm);background:var(--gold-bg);border:1px solid rgba(200,169,110,.3);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:1rem}
-.proj-title{font-family:var(--fh);font-size:1.1rem;font-weight:800;letter-spacing:-.03em;color:var(--ink);margin-bottom:3px}
-.proj-sub{font-size:12px;color:var(--gold);font-weight:600;letter-spacing:.04em}
-.proj-body{padding:clamp(1rem,3vw,1.5rem) clamp(1.2rem,3vw,2rem);flex:1;display:flex;flex-direction:column;gap:1.1rem}
-.proj-desc{font-size:13.5px;color:var(--ink2);line-height:1.7;font-weight:300}
-.proj-achs{display:flex;flex-direction:column;gap:.45rem}
-.ach{display:flex;align-items:flex-start;gap:9px;font-size:12.5px;color:var(--ink2);line-height:1.55}
-.ach-box{width:16px;height:16px;border-radius:4px;background:var(--gold-bg);border:1px solid rgba(200,169,110,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:7.5px;color:var(--gold);font-weight:800}
-.proj-tools{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto;padding-top:.5rem}
-.t-tag{background:var(--bg);border:1px solid var(--border);color:var(--ink3);font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;font-family:'Courier New',monospace;transition:all .2s}
-.t-tag:hover{background:var(--gold-bg);color:var(--gold);border-color:rgba(200,169,110,.4)}
-
-/* ─── TECH ─── */
-.tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:1rem}
-.tech-block{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:clamp(1.2rem,3vw,1.75rem);box-shadow:var(--sh-sm);transition:transform var(--t),box-shadow var(--t)}
-.tech-block:hover{transform:translateY(-4px);box-shadow:var(--sh)}
-.tech-head{display:flex;align-items:center;gap:10px;margin-bottom:1rem}
-.tech-icon{font-size:19px}
-.tech-name{font-family:var(--fh);font-size:14px;font-weight:700;color:var(--ink)}
-.tech-badges{display:flex;flex-wrap:wrap;gap:.4rem}
-.tb{background:var(--bg);border:1px solid var(--border);color:var(--ink2);font-size:12px;font-weight:500;padding:5px 11px;border-radius:999px;transition:all .25s cubic-bezier(.34,1.56,.64,1)}
-.tb:hover{background:var(--gold-bg);color:var(--gold);border-color:rgba(200,169,110,.5);transform:scale(1.07)}
-
-/* ─── FOOTER ─── */
-footer{background:var(--ink);padding:clamp(2rem,5vw,3rem) clamp(1rem,5vw,2rem);position:relative;z-index:1}
-.foot-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.foot-logo{font-family:var(--fh);font-size:1.5rem;font-weight:800;color:#f5f2ec;letter-spacing:-.04em}
-.foot-logo span{color:var(--gold)}
-.foot-links{display:flex;gap:1.5rem;flex-wrap:wrap}
-.foot-links a{font-size:13px;color:rgba(245,242,236,.45);transition:color var(--t)}
-.foot-links a:hover{color:var(--gold)}
-.foot-copy{font-size:12px;color:rgba(245,242,236,.28)}
-
-.hr{height:1px;background:var(--border);max-width:1100px;margin:0 auto}
-
-/* ─── REVEAL ─── */
-.reveal{opacity:0;transform:translateY(32px);transition:opacity .65s cubic-bezier(.4,0,.2,1),transform .65s cubic-bezier(.4,0,.2,1)}
-.reveal.in{opacity:1;transform:translateY(0)}
-.d1{transition-delay:.05s}.d2{transition-delay:.12s}.d3{transition-delay:.19s}.d4{transition-delay:.26s}
-
-/* ─── RESPONSIVE ─── */
-
-/* ≤1100px: Narrow the right column */
-@media(max-width:1100px){
-  .hero-inner{grid-template-columns:1fr 240px;gap:2rem}
-  .avatar-frame{width:180px;height:215px}
-  .hero-right{padding-left:36px;padding-right:36px}
+/* Mobile avatar strip — shown only on small screens */
+.hero-mobile-strip {
+  display: none; flex-direction: column; align-items: center;
+  gap: 1rem; margin-bottom: 2rem;
+}
+.hero-mobile-avatar {
+  width: 110px; height: 130px;
+  border-radius: 55px 55px 40px 40px;
+  background: var(--card2); border: 2px solid rgba(200,169,110,.3);
+  overflow: hidden; box-shadow: var(--sh);
+  position: relative; /* needed for z-index children */
+}
+/* ── IMAGE FIX: same layering approach for mobile avatar ── */
+.hero-mobile-avatar .avatar-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  display: block; z-index: 2;
+}
+.hero-mobile-avatar .av-letters {
+  position: absolute; inset: 0; z-index: 1;
+  font-size: 36px;
+}
+.hero-mobile-badge {
+  background: var(--gold); color: #fff;
+  font-size: 10px; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; padding: 5px 14px; border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(200,169,110,.4);
 }
 
-/* ≤900px: Single column, show mobile avatar strip instead */
-@media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr}
-  .hero-right{display:none}
-  .hero-mobile-strip{display:flex}
-  .hero-left{
-    display:flex;flex-direction:column;align-items:center;
-    text-align:center;
-  }
-  .hero-sub,.hero-name{text-align:center}
-  .hero-pills{justify-content:center}
-  .hero-stats{justify-content:center}
+/* Hero entrance animations */
+.hero-left > * { animation: slideUp .7s cubic-bezier(.34,1.56,.64,1) both; }
+.hero-left > *:nth-child(1) { animation-delay: .05s; }
+.hero-left > *:nth-child(2) { animation-delay: .12s; }
+.hero-left > *:nth-child(3) { animation-delay: .19s; }
+.hero-left > *:nth-child(4) { animation-delay: .26s; }
+.hero-left > *:nth-child(5) { animation-delay: .33s; }
+.hero-right, .hero-mobile-strip { animation: scaleIn .8s .2s cubic-bezier(.34,1.56,.64,1) both; }
+@keyframes slideUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(.88) translateY(24px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+
+/* ── SECTIONS ── */
+.section { padding: clamp(3.5rem, 8vw, 5.5rem) clamp(1rem, 5vw, 2rem); position: relative; z-index: 1; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.stripe { background: var(--bg2); }
+.eye {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: .55rem;
+}
+.eye::after { content: ''; width: 36px; height: 1px; background: var(--gold); opacity: .5; }
+.sh2 {
+  font-family: var(--fh); font-size: clamp(1.6rem, 4vw, 2.7rem);
+  font-weight: 800; letter-spacing: -.04em; color: var(--ink);
+  line-height: 1.05; margin-bottom: 2.5rem;
+}
+.sh2 em { font-style: normal; color: var(--gold); }
+.hr { height: 1px; background: var(--border); max-width: 1100px; margin: 0 auto; }
+
+/* ── TABLE OF CONTENTS ── */
+.toc-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: clamp(1.5rem, 4vw, 2.5rem);
+  box-shadow: var(--sh); position: relative; overflow: hidden;
+}
+.toc-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2.5px;
+  background: linear-gradient(90deg, var(--gold), var(--gold2), transparent);
+}
+.toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .5rem; margin-top: .5rem; }
+.toc-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px; border-radius: var(--r-sm);
+  border: 1px solid var(--border2); background: var(--bg);
+  color: var(--ink2); font-size: 13px; font-weight: 500;
+  transition: all .28s cubic-bezier(.34,1.56,.64,1);
+}
+.toc-item:hover {
+  background: var(--gold-bg); border-color: rgba(200,169,110,.4);
+  color: var(--gold); transform: translateX(4px);
+}
+.toc-num { font-family: var(--fh); font-size: 11px; font-weight: 800; color: var(--gold); opacity: .7; min-width: 20px; }
+.toc-arrow { margin-left: auto; color: var(--gold); opacity: 0; transition: opacity .2s, transform .2s; transform: translateX(-4px); font-size: 12px; }
+.toc-item:hover .toc-arrow { opacity: 1; transform: translateX(0); }
+
+/* ── SUMMARY ── */
+.sum-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: clamp(1.5rem, 4vw, 2.5rem);
+  box-shadow: var(--sh); position: relative; overflow: hidden;
+}
+.sum-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2.5px;
+  background: linear-gradient(90deg, var(--gold), var(--gold2), transparent);
+}
+.sum-text { font-size: clamp(14px, 2.2vw, 15.5px); color: var(--ink2); line-height: 1.85; font-weight: 300; margin-bottom: 1.75rem; }
+.sum-text strong { color: var(--ink); font-weight: 500; }
+.kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; }
+.kpi {
+  background: var(--bg); border: 1px solid var(--border2);
+  border-radius: var(--r-sm); padding: 1.2rem 1.4rem;
+  transition: transform var(--t), box-shadow var(--t);
+}
+.kpi:hover { transform: translateY(-4px); box-shadow: var(--sh-sm); }
+.kpi-val { font-family: var(--fh); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; color: var(--gold); letter-spacing: -.04em; line-height: 1; }
+.kpi-lbl { font-size: 11.5px; color: var(--ink3); margin-top: 5px; font-weight: 600; }
+
+/* ── PHILOSOPHY ── */
+.phil-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.phil-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: clamp(1.4rem, 3vw, 2rem);
+  box-shadow: var(--sh-sm); position: relative; overflow: hidden;
+  transition: transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow var(--t);
+}
+.phil-card:hover { transform: translateY(-5px); box-shadow: var(--sh); }
+.phil-card::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: var(--gold); opacity: .5; }
+.phil-full { grid-column: 1 / -1; }
+.phil-icon { font-size: 28px; margin-bottom: .9rem; }
+.phil-title { font-family: var(--fh); font-size: 1rem; font-weight: 800; color: var(--ink); letter-spacing: -.03em; margin-bottom: .6rem; }
+.phil-text { font-size: 13.5px; color: var(--ink2); line-height: 1.8; font-weight: 300; }
+.phil-quote {
+  grid-column: 1 / -1;
+  background: var(--gold-bg); border: 1px solid rgba(200,169,110,.3);
+  border-radius: var(--r); padding: 1.75rem 2rem;
+  font-family: var(--fh); font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 700; color: var(--ink); letter-spacing: -.03em; line-height: 1.4;
+  position: relative;
+}
+.phil-quote::before {
+  content: '"'; position: absolute; top: -.2rem; left: 1.2rem;
+  font-size: 5rem; color: var(--gold); opacity: .15;
+  font-family: Georgia, serif; line-height: 1;
 }
 
-/* ≤768px: Hamburger menu */
-@media(max-width:768px){
-  .nav-links{display:none}
-  .hamburger{display:flex}
+/* ── SKILLS ── */
+.skills-wrap { display: flex; flex-direction: column; gap: 2rem; }
+.sk-lbl { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink3); margin-bottom: .7rem; }
+.tag-cloud { display: flex; flex-wrap: wrap; gap: .45rem; }
+.s-tag {
+  background: var(--card); border: 1px solid var(--border);
+  color: var(--ink2); font-size: 13px; font-weight: 500;
+  padding: 8px 16px; border-radius: 999px; cursor: default;
+  transition: all .28s cubic-bezier(.34,1.56,.64,1);
+}
+.s-tag:hover {
+  background: var(--gold-bg); border-color: rgba(200,169,110,.5);
+  color: var(--gold); transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 14px rgba(200,169,110,.15);
+}
+.s-tag.hi { background: var(--gold-bg); border-color: rgba(200,169,110,.4); color: var(--gold); }
+
+/* Advanced Skills Evidence */
+.adv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px,100%), 1fr)); gap: 1.25rem; margin-top: 2rem; }
+.adv-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 1.5rem; box-shadow: var(--sh-sm);
+  transition: transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow var(--t);
+  position: relative; overflow: hidden;
+}
+.adv-card:hover { transform: translateY(-5px); box-shadow: var(--sh); }
+.adv-card::after {
+  content: ''; position: absolute; right: -30px; bottom: -30px;
+  width: 100px; height: 100px; border-radius: 50%;
+  background: var(--gold); opacity: .04; pointer-events: none;
+}
+.adv-top { display: flex; align-items: center; gap: 10px; margin-bottom: .9rem; }
+.adv-ico {
+  width: 42px; height: 42px; border-radius: var(--r-sm);
+  background: var(--gold-bg); border: 1px solid rgba(200,169,110,.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 19px; flex-shrink: 0;
+}
+.adv-name { font-family: var(--fh); font-size: .95rem; font-weight: 800; color: var(--ink); letter-spacing: -.03em; }
+.adv-cat { font-size: 11px; color: var(--gold); font-weight: 600; letter-spacing: .05em; text-transform: uppercase; }
+.adv-desc { font-size: 13px; color: var(--ink2); line-height: 1.7; font-weight: 300; margin-bottom: 1rem; }
+.adv-evidence { background: var(--bg); border: 1px solid var(--border2); border-radius: var(--r-sm); padding: .75rem 1rem; }
+.adv-ev-lbl { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink3); margin-bottom: .4rem; }
+.adv-ev-val { font-size: 12.5px; color: var(--ink2); font-weight: 500; }
+.adv-ev-val strong { color: var(--gold); }
+
+/* ── EDUCATION ── */
+.edu-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: clamp(1.5rem, 4vw, 2.5rem);
+  box-shadow: var(--sh); display: grid; grid-template-columns: auto 1fr;
+  gap: 2rem; align-items: start; position: relative; overflow: hidden;
+  transition: transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow var(--t);
+}
+.edu-card:hover { transform: translateY(-5px); box-shadow: var(--sh-lg); }
+.edu-card::after {
+  content: ''; position: absolute; right: -50px; bottom: -50px;
+  width: 180px; height: 180px; border-radius: 50%;
+  background: var(--gold); opacity: .04; pointer-events: none;
+}
+.edu-ico {
+  width: 62px; height: 62px; border-radius: var(--r-sm);
+  background: var(--gold-bg); border: 1px solid rgba(200,169,110,.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 27px; flex-shrink: 0;
+}
+.edu-deg { font-family: var(--fh); font-size: clamp(1.1rem, 3vw, 1.3rem); font-weight: 800; letter-spacing: -.03em; color: var(--ink); margin-bottom: 4px; }
+.edu-inst { font-size: 14px; color: var(--gold); font-weight: 600; margin-bottom: 4px; }
+.edu-period { font-size: 13px; color: var(--ink3); margin-bottom: 1rem; }
+.edu-cgpa {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--gold-bg); border: 1px solid rgba(200,169,110,.3);
+  color: var(--gold); font-size: 12px; font-weight: 700;
+  padding: 4px 12px; border-radius: 999px; margin-bottom: 1.25rem;
+}
+.c-list { display: flex; flex-wrap: wrap; gap: .4rem; }
+.c-tag { background: var(--bg); border: 1px solid var(--border); color: var(--ink2); font-size: 12px; padding: 4px 10px; border-radius: 999px; }
+.cert-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
+.cert-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r-sm); padding: 1rem 1.25rem;
+  display: flex; align-items: center; gap: 12px; box-shadow: var(--sh-sm);
+  transition: transform .3s cubic-bezier(.34,1.56,.64,1), box-shadow var(--t);
+  flex: 1; min-width: 250px;
+}
+.cert-card:hover { transform: translateY(-3px); box-shadow: var(--sh); }
+.cert-ico { font-size: 24px; flex-shrink: 0; }
+.cert-name { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+.cert-meta { font-size: 11.5px; color: var(--ink3); }
+.cert-score {
+  margin-left: auto; background: var(--gold-bg);
+  border: 1px solid rgba(200,169,110,.3); color: var(--gold);
+  font-size: 12px; font-weight: 800; padding: 4px 10px;
+  border-radius: 999px; flex-shrink: 0;
 }
 
-/* ≤640px: Education card stacks */
-@media(max-width:640px){
-  .edu-card{grid-template-columns:1fr}
-  .edu-ico{width:48px;height:48px;font-size:22px}
+/* ── PROJECTS ── */
+.proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(290px,100%), 1fr)); gap: 1.5rem; }
+.proj-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r); overflow: hidden; box-shadow: var(--sh);
+  display: flex; flex-direction: column;
+  transition: transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow var(--t), border-color var(--t);
+}
+.proj-card:hover {
+  transform: translateY(-9px);
+  box-shadow: 0 28px 64px rgba(200,169,110,.14), var(--sh);
+  border-color: rgba(200,169,110,.4);
+}
+.proj-top {
+  padding: clamp(1.2rem, 3vw, 2rem) clamp(1.2rem, 3vw, 2rem) 1.5rem;
+  border-bottom: 1px solid var(--border2); position: relative;
+}
+.proj-num {
+  position: absolute; top: 1rem; right: 1.25rem;
+  font-family: var(--fh); font-size: 4rem; font-weight: 800;
+  color: var(--ink); opacity: .04; line-height: 1; user-select: none;
+}
+.proj-icon {
+  width: 48px; height: 48px; border-radius: var(--r-sm);
+  background: var(--gold-bg); border: 1px solid rgba(200,169,110,.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; margin-bottom: 1rem;
+}
+.proj-title { font-family: var(--fh); font-size: 1.1rem; font-weight: 800; letter-spacing: -.03em; color: var(--ink); margin-bottom: 3px; }
+.proj-sub { font-size: 12px; color: var(--gold); font-weight: 600; letter-spacing: .04em; }
+.proj-body { padding: clamp(1rem, 3vw, 1.5rem) clamp(1.2rem, 3vw, 2rem); flex: 1; display: flex; flex-direction: column; gap: 1.1rem; }
+.proj-desc { font-size: 13.5px; color: var(--ink2); line-height: 1.7; font-weight: 300; }
+.proj-achs { display: flex; flex-direction: column; gap: .45rem; }
+.ach { display: flex; align-items: flex-start; gap: 9px; font-size: 12.5px; color: var(--ink2); line-height: 1.55; }
+.ach-box {
+  width: 16px; height: 16px; border-radius: 4px;
+  background: var(--gold-bg); border: 1px solid rgba(200,169,110,.3);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 1px; font-size: 7.5px; color: var(--gold); font-weight: 800;
+}
+.proj-tools { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: auto; padding-top: .5rem; }
+.t-tag {
+  background: var(--bg); border: 1px solid var(--border);
+  color: var(--ink3); font-size: 11px; font-weight: 600;
+  padding: 3px 9px; border-radius: 999px;
+  font-family: 'Courier New', monospace; transition: all .2s;
+}
+.t-tag:hover { background: var(--gold-bg); color: var(--gold); border-color: rgba(200,169,110,.4); }
 
-  .hero-mobile-avatar{width:90px;height:108px;border-radius:45px 45px 30px 30px}
+/* Project detail accordion */
+.proj-detail-btn {
+  display: flex; align-items: center; justify-content: space-between;
+  width: 100%; background: var(--bg); border: 1px solid var(--border2);
+  border-radius: var(--r-sm); padding: .7rem 1rem;
+  font-size: 12px; font-weight: 700; color: var(--ink2);
+  letter-spacing: .06em; text-transform: uppercase;
+  cursor: pointer; transition: all .25s; margin-top: .5rem;
+}
+.proj-detail-btn:hover { background: var(--gold-bg); color: var(--gold); border-color: rgba(200,169,110,.3); }
+.proj-detail-btn svg { width: 14px; height: 14px; transition: transform .3s; flex-shrink: 0; }
+.proj-detail-btn.open svg { transform: rotate(180deg); }
+.proj-detail-panel { display: none; background: var(--bg); border: 1px solid var(--border2); border-radius: var(--r-sm); padding: 1rem 1.1rem; margin-top: .4rem; }
+.proj-detail-panel.open { display: block; }
+.pd-section { margin-bottom: .9rem; }
+.pd-section:last-child { margin-bottom: 0; }
+.pd-label { font-size: 10.5px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: .35rem; }
+.pd-list { display: flex; flex-direction: column; gap: .3rem; }
+.pd-item { font-size: 12.5px; color: var(--ink2); line-height: 1.6; padding-left: .9rem; position: relative; }
+.pd-item::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-size: 10px; top: .2rem; }
 
-  .foot-inner{flex-direction:column;text-align:center;gap:.75rem}
-  .foot-links{justify-content:center}
+/* ── TECH ── */
+.tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(230px,100%), 1fr)); gap: 1rem; }
+.tech-block {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: clamp(1.2rem, 3vw, 1.75rem);
+  box-shadow: var(--sh-sm); transition: transform var(--t), box-shadow var(--t);
+}
+.tech-block:hover { transform: translateY(-4px); box-shadow: var(--sh); }
+.tech-head { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+.tech-icon { font-size: 19px; }
+.tech-name { font-family: var(--fh); font-size: 14px; font-weight: 700; color: var(--ink); }
+.tech-badges { display: flex; flex-wrap: wrap; gap: .4rem; }
+.tb {
+  background: var(--bg); border: 1px solid var(--border);
+  color: var(--ink2); font-size: 12px; font-weight: 500;
+  padding: 5px 11px; border-radius: 999px;
+  transition: all .25s cubic-bezier(.34,1.56,.64,1);
+}
+.tb:hover { background: var(--gold-bg); color: var(--gold); border-color: rgba(200,169,110,.5); transform: scale(1.07); }
+
+/* ── COLLABORATION ── */
+.collab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.collab-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: clamp(1.4rem, 3vw, 2rem);
+  box-shadow: var(--sh-sm); position: relative; overflow: hidden;
+  transition: transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow var(--t);
+}
+.collab-card:hover { transform: translateY(-5px); box-shadow: var(--sh); }
+.collab-full { grid-column: 1 / -1; }
+.collab-ico { font-size: 28px; margin-bottom: .9rem; }
+.collab-title { font-family: var(--fh); font-size: 1.05rem; font-weight: 800; color: var(--ink); letter-spacing: -.03em; margin-bottom: .5rem; }
+.collab-text { font-size: 13.5px; color: var(--ink2); line-height: 1.8; font-weight: 300; }
+.collab-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--gold-bg); border: 1px solid rgba(200,169,110,.3);
+  color: var(--gold); font-size: 11px; font-weight: 700;
+  padding: 4px 12px; border-radius: 999px; margin-bottom: .75rem;
+}
+.role-list { display: flex; flex-direction: column; gap: .5rem; margin-top: .8rem; }
+.role-item { display: flex; align-items: flex-start; gap: 9px; font-size: 13px; color: var(--ink2); line-height: 1.55; }
+.role-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: .45rem; }
+
+/* ── GLOBAL ETHICS ── */
+.ethics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.eth-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: clamp(1.4rem, 3vw, 2rem);
+  box-shadow: var(--sh-sm);
+  transition: transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow var(--t);
+}
+.eth-card:hover { transform: translateY(-5px); box-shadow: var(--sh); }
+.eth-full { grid-column: 1 / -1; }
+.eth-ico { font-size: 28px; margin-bottom: .9rem; }
+.eth-title { font-family: var(--fh); font-size: 1.05rem; font-weight: 800; color: var(--ink); letter-spacing: -.03em; margin-bottom: .5rem; }
+.eth-text { font-size: 13.5px; color: var(--ink2); line-height: 1.8; font-weight: 300; }
+.eth-examples { display: flex; flex-direction: column; gap: .55rem; margin-top: .8rem; }
+.eth-ex { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--ink2); line-height: 1.6; }
+.eth-ex-ico {
+  width: 24px; height: 24px; border-radius: 6px;
+  background: var(--gold-bg); border: 1px solid rgba(200,169,110,.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; flex-shrink: 0; margin-top: .1rem;
 }
 
-/* ≤400px: Tightest mobile */
-@media(max-width:400px){
-  .hero-tag{font-size:10px;padding:5px 10px}
-  .hero-name{font-size:2rem}
-  .hero-pill{font-size:12px;padding:7px 11px}
-  .kpi-row{grid-template-columns:1fr 1fr}
-  .proj-title{font-size:1rem}
+/* ── FUTURE GOALS ── */
+.goals-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.goal-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: clamp(1.4rem, 3vw, 2rem);
+  box-shadow: var(--sh-sm); position: relative; overflow: hidden;
+  transition: transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow var(--t);
+}
+.goal-card:hover { transform: translateY(-5px); box-shadow: var(--sh); }
+.goal-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); }
+.goal-ico { font-size: 28px; margin-bottom: .9rem; }
+.goal-label { font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: .4rem; }
+.goal-title { font-family: var(--fh); font-size: 1.05rem; font-weight: 800; color: var(--ink); letter-spacing: -.03em; margin-bottom: .6rem; }
+.goal-text { font-size: 13.5px; color: var(--ink2); line-height: 1.8; font-weight: 300; }
+.goal-full { grid-column: 1 / -1; }
+.timeline { display: flex; flex-direction: column; gap: 0; margin-top: .5rem; }
+.tl-item { display: flex; gap: 1rem; position: relative; padding-bottom: 1.2rem; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-left { display: flex; flex-direction: column; align-items: center; }
+.tl-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gold); border: 2px solid var(--gold-bg); flex-shrink: 0; margin-top: .3rem; }
+.tl-line { width: 1px; background: var(--border); flex: 1; margin-top: 4px; }
+.tl-item:last-child .tl-line { display: none; }
+.tl-content { flex: 1; }
+.tl-period { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--gold); margin-bottom: 2px; }
+.tl-text { font-size: 13px; color: var(--ink2); line-height: 1.65; }
+
+/* ── CONCLUSION / SWOT ── */
+.concl-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: clamp(1.5rem, 4vw, 2.5rem);
+  box-shadow: var(--sh); position: relative; overflow: hidden; margin-bottom: 1.5rem;
+}
+.concl-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2.5px; background: linear-gradient(90deg, var(--gold), var(--gold2), transparent); }
+.concl-intro { font-size: clamp(14px, 2.2vw, 15.5px); color: var(--ink2); line-height: 1.85; font-weight: 300; margin-bottom: 1.25rem; }
+.concl-intro strong { color: var(--ink); font-weight: 500; }
+.concl-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+.concl-item { background: var(--bg); border: 1px solid var(--border2); border-radius: var(--r-sm); padding: 1rem 1.1rem; }
+.concl-item-lbl { font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: .35rem; }
+.concl-item-val { font-size: 13px; color: var(--ink2); line-height: 1.65; }
+.swot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+.swot-card { border-radius: var(--r); padding: 1.4rem 1.6rem; }
+.swot-s { background: rgba(200,169,110,.08); border: 1px solid rgba(200,169,110,.25); }
+.swot-w { background: rgba(90,82,72,.06); border: 1px solid var(--border); }
+.swot-o { background: rgba(200,169,110,.05); border: 1px solid rgba(200,169,110,.2); }
+.swot-t { background: rgba(90,82,72,.04); border: 1px solid var(--border); }
+.swot-label { font-family: var(--fh); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; margin-bottom: .7rem; display: flex; align-items: center; gap: 7px; }
+.swot-s .swot-label, .swot-o .swot-label { color: var(--gold); }
+.swot-w .swot-label, .swot-t .swot-label { color: var(--ink3); }
+.swot-ico { font-size: 16px; }
+.swot-list { display: flex; flex-direction: column; gap: .4rem; }
+.swot-item { font-size: 12.5px; color: var(--ink2); line-height: 1.55; padding-left: .8rem; position: relative; }
+.swot-item::before { content: '•'; position: absolute; left: 0; color: var(--gold); }
+
+/* ── TESTIMONIALS ── */
+.test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px,100%), 1fr)); gap: 1.5rem; }
+.test-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: clamp(1.4rem, 3vw, 2rem);
+  box-shadow: var(--sh-sm); position: relative; overflow: hidden;
+  transition: transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow var(--t);
+}
+.test-card:hover { transform: translateY(-5px); box-shadow: var(--sh); }
+.test-card::before { content: '"'; position: absolute; top: -.5rem; right: 1rem; font-size: 6rem; color: var(--gold); opacity: .07; font-family: Georgia, serif; line-height: 1; pointer-events: none; }
+.test-quote { font-size: 13.5px; color: var(--ink2); line-height: 1.8; font-weight: 300; margin-bottom: 1.25rem; font-style: italic; }
+.test-author { display: flex; align-items: center; gap: 10px; }
+.test-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--gold-bg); border: 1px solid rgba(200,169,110,.3); display: flex; align-items: center; justify-content: center; font-family: var(--fh); font-size: 13px; font-weight: 800; color: var(--gold); flex-shrink: 0; }
+.test-name { font-size: 13px; font-weight: 700; color: var(--ink); }
+.test-role { font-size: 11.5px; color: var(--ink3); }
+
+/* ── FOOTER ── */
+footer { background: var(--ink); padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 5vw, 2rem); position: relative; z-index: 1; }
+.foot-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.foot-logo { font-family: var(--fh); font-size: 1.5rem; font-weight: 800; color: #f5f2ec; letter-spacing: -.04em; }
+.foot-logo span { color: var(--gold); }
+.foot-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.foot-links a { font-size: 13px; color: rgba(245,242,236,.45); transition: color var(--t); }
+.foot-links a:hover { color: var(--gold); }
+.foot-copy { font-size: 12px; color: rgba(245,242,236,.28); }
+
+/* ── REVEAL ANIMATION ── */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity .65s cubic-bezier(.4,0,.2,1), transform .65s cubic-bezier(.4,0,.2,1); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: .05s; }
+.d2 { transition-delay: .12s; }
+.d3 { transition-delay: .19s; }
+.d4 { transition-delay: .26s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1100px) {
+  .hero-inner { grid-template-columns: 1fr 240px; gap: 2rem; }
+  .avatar-frame { width: 180px; height: 215px; }
+  .hero-right { padding-left: 24px; padding-right: 24px; }
+}
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-mobile-strip { display: flex; }
+  .hero-left { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .hero-sub, .hero-name { text-align: center; }
+  .hero-pills { justify-content: center; }
+  .hero-stats { justify-content: center; }
+  .phil-wrap { grid-template-columns: 1fr; }
+  .collab-grid { grid-template-columns: 1fr; }
+  .ethics-grid { grid-template-columns: 1fr; }
+  .goals-wrap { grid-template-columns: 1fr; }
+  .concl-row { grid-template-columns: 1fr; }
+  .swot-grid { grid-template-columns: 1fr; }
+  .toc-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+}
+@media (max-width: 640px) {
+  .edu-card { grid-template-columns: 1fr; }
+  .edu-ico { width: 48px; height: 48px; font-size: 22px; }
+  .foot-inner { flex-direction: column; text-align: center; gap: .75rem; }
+  .foot-links { justify-content: center; }
+  .toc-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 400px) {
+  .hero-name { font-size: 2rem; }
+  .kpi-row { grid-template-columns: 1fr 1fr; }
 }
 </style>
 </head>
@@ -370,13 +832,13 @@ footer{background:var(--ink);padding:clamp(2rem,5vw,3rem) clamp(1rem,5vw,2rem);p
 <!-- PRELOADER -->
 <div id="preloader">
   <div class="pl-logo">
-    <span class="pl-char">A</span><span class="pl-char">Z</span><span class="pl-char" style="color:var(--gold)">.</span>
+    <span class="pl-char">A</span><span class="pl-char">Z</span><span class="pl-char">.</span>
   </div>
   <div class="pl-bar-wrap"><div class="pl-bar"></div></div>
   <div class="pl-sub">Electrical Engineer · PDEU</div>
 </div>
 
-<!-- GRID -->
+<!-- GRID BACKGROUND -->
 <div class="grid-bg">
   <svg xmlns="http://www.w3.org/2000/svg">
     <defs>
@@ -388,17 +850,23 @@ footer{background:var(--ink);padding:clamp(2rem,5vw,3rem) clamp(1rem,5vw,2rem);p
   </svg>
 </div>
 
-<!-- CURSOR (desktop) -->
+<!-- CURSOR -->
 <div class="cursor" id="cur"></div>
 <div class="cursor-ring" id="cring"></div>
 
 <!-- MOBILE DRAWER -->
 <div class="mobile-menu" id="mobileMenu">
+  <a href="#toc" class="mob-link">Contents</a>
   <a href="#about" class="mob-link">About</a>
+  <a href="#philosophy" class="mob-link">Philosophy</a>
   <a href="#skills" class="mob-link">Skills</a>
   <a href="#education" class="mob-link">Education</a>
   <a href="#projects" class="mob-link">Projects</a>
-  <a href="#tech" class="mob-link">Tech</a>
+  <a href="#collaboration" class="mob-link">Leadership</a>
+  <a href="#ethics" class="mob-link">Ethics</a>
+  <a href="#goals" class="mob-link">Goals</a>
+  <a href="#conclusion" class="mob-link">Conclusion</a>
+  <a href="#testimonials" class="mob-link">Testimonials</a>
   <div class="mobile-menu-sub">Anand Zanzmeriya · Electrical Engineer</div>
 </div>
 
@@ -408,10 +876,13 @@ footer{background:var(--ink);padding:clamp(2rem,5vw,3rem) clamp(1rem,5vw,2rem);p
     <div class="nav-logo">A<span>.</span>Z</div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#philosophy">Philosophy</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#tech">Tech</a></li>
+      <li><a href="#collaboration">Leadership</a></li>
+      <li><a href="#goals">Goals</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
     </ul>
     <div class="nav-right">
       <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">🌙</button>
@@ -427,12 +898,15 @@ footer{background:var(--ink);padding:clamp(2rem,5vw,3rem) clamp(1rem,5vw,2rem);p
   <div class="hero-orb orb1"></div>
   <div class="hero-orb orb2"></div>
   <div class="hero-inner">
-    <div class="hero-left">
 
-      <!-- Mobile avatar strip (hidden on desktop) -->
+    <div class="hero-left">
+      <!-- Mobile avatar (shown only on small screens) -->
       <div class="hero-mobile-strip">
         <div class="hero-mobile-avatar">
-          <img src="photo.jpeg" alt="Anand Zanzmeriya" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-family:var(--fh);font-size:36px;font-weight:800;color:var(--gold)\'>AZ</span>'"/>
+          <!-- ✅ FIX: uses photo.jpeg (same folder), z-index:2 ensures image is above fallback -->
+          <img class="avatar-img" src="photo.jpeg" alt="Anand Zanzmeriya"
+               onerror="this.style.display='none'"/>
+          <div class="av-letters">AZ</div>
         </div>
         <div class="hero-mobile-badge">B.Tech · PDEU · 2027</div>
       </div>
@@ -465,18 +939,44 @@ footer{background:var(--ink);padding:clamp(2rem,5vw,3rem) clamp(1rem,5vw,2rem);p
       </div>
     </div>
 
-    <!-- Desktop avatar panel -->
+    <!-- Desktop avatar (hidden on mobile via CSS) -->
     <div class="hero-right">
       <div class="fc fc1"><div class="fc-dot"></div>Power Systems</div>
       <div class="avatar-frame">
-        <div class="avatar-inner">
-          <img src="photo.jpeg" alt="Anand Zanzmeriya"/>
-        </div>
+        <!-- ✅ FIX: avatar-img has z-index:2, av-letters has z-index:1 — no bleed-through -->
+        <img class="avatar-img" src="photo.jpeg" alt="Anand Zanzmeriya"
+             onerror="this.style.display='none'"/>
         <div class="av-letters">AZ</div>
         <div class="av-glow"></div>
       </div>
       <div class="avatar-badge">B.TECH · PDEU · 2027</div>
       <div class="fc fc2"><div class="fc-dot"></div>MATLAB · Python</div>
+    </div>
+
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<!-- TABLE OF CONTENTS -->
+<section class="section" id="toc">
+  <div class="section-inner">
+    <div class="eye reveal">Navigate</div>
+    <h2 class="sh2 reveal">Table of <em>Contents</em></h2>
+    <div class="toc-card reveal">
+      <div class="toc-grid">
+        <a href="#about" class="toc-item"><span class="toc-num">01</span>About Me &amp; Summary<span class="toc-arrow">→</span></a>
+        <a href="#philosophy" class="toc-item"><span class="toc-num">02</span>Learning Philosophy<span class="toc-arrow">→</span></a>
+        <a href="#skills" class="toc-item"><span class="toc-num">03</span>Skills &amp; Competencies<span class="toc-arrow">→</span></a>
+        <a href="#education" class="toc-item"><span class="toc-num">04</span>Education &amp; Certifications<span class="toc-arrow">→</span></a>
+        <a href="#projects" class="toc-item"><span class="toc-num">05</span>Interdisciplinary Projects<span class="toc-arrow">→</span></a>
+        <a href="#tech" class="toc-item"><span class="toc-num">06</span>Technologies<span class="toc-arrow">→</span></a>
+        <a href="#collaboration" class="toc-item"><span class="toc-num">07</span>Collaboration &amp; Leadership<span class="toc-arrow">→</span></a>
+        <a href="#ethics" class="toc-item"><span class="toc-num">08</span>Global Awareness &amp; Ethics<span class="toc-arrow">→</span></a>
+        <a href="#goals" class="toc-item"><span class="toc-num">09</span>Future Goals<span class="toc-arrow">→</span></a>
+        <a href="#conclusion" class="toc-item"><span class="toc-num">10</span>Conclusion &amp; Self-Assessment<span class="toc-arrow">→</span></a>
+        <a href="#testimonials" class="toc-item"><span class="toc-num">11</span>Testimonials<span class="toc-arrow">→</span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -484,7 +984,7 @@ footer{background:var(--ink);padding:clamp(2rem,5vw,3rem) clamp(1rem,5vw,2rem);p
 <div class="hr"></div>
 
 <!-- ABOUT -->
-<section class="section" id="about">
+<section class="section stripe" id="about">
   <div class="section-inner">
     <div class="eye reveal">Summary</div>
     <h2 class="sh2 reveal">About <em>Me</em></h2>
@@ -495,6 +995,36 @@ footer{background:var(--ink);padding:clamp(2rem,5vw,3rem) clamp(1rem,5vw,2rem);p
         <div class="kpi"><div class="kpi-val">&lt;30ms</div><div class="kpi-lbl">Fault Response</div></div>
         <div class="kpi"><div class="kpi-val" id="k2">7.5</div><div class="kpi-lbl">CGPA Score</div></div>
         <div class="kpi"><div class="kpi-val" id="k3">3+</div><div class="kpi-lbl">Projects</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<!-- LEARNING PHILOSOPHY -->
+<section class="section" id="philosophy">
+  <div class="section-inner">
+    <div class="eye reveal">Mindset</div>
+    <h2 class="sh2 reveal">Introduction &amp; Learning <em>Philosophy</em></h2>
+    <div class="phil-wrap">
+      <div class="phil-card reveal d1">
+        <div class="phil-icon">⚡</div>
+        <div class="phil-title">How It Started</div>
+        <p class="phil-text">I didn't land in Electrical Engineering by accident. What started as curiosity around how systems work — from circuits to real-world power networks — slowly turned into a genuine interest in understanding and building technology that actually matters. That curiosity has only grown stronger with exposure to subjects like machines, power systems, and emerging areas like EVs and Industrial IoT.</p>
+      </div>
+      <div class="phil-card reveal d2">
+        <div class="phil-icon">🎯</div>
+        <div class="phil-title">Core Values</div>
+        <p class="phil-text">At the core, I value clarity, consistency, and practical understanding over surface-level learning. I don't believe in studying just to complete a syllabus. I prefer breaking concepts down, questioning why things work the way they do, and connecting theory to real applications — whether it's solving numerical problems, working on simulations, or exploring new domains.</p>
+      </div>
+      <div class="phil-card reveal d3">
+        <div class="phil-icon">🔭</div>
+        <div class="phil-title">My Approach</div>
+        <p class="phil-text">My approach to learning is simple — stay disciplined, stay curious, and keep improving. I try to balance academics with exploration, whether that's through technical projects, coding, or understanding industry trends. For me, engineering isn't just about passing exams; it's about developing the ability to think, analyze, and create solutions that can actually make an impact.</p>
+      </div>
+      <div class="phil-quote reveal d4">
+        Engineering isn't just about passing exams — it's about developing the ability to think, analyze, and create solutions that can actually make an impact.
       </div>
     </div>
   </div>
@@ -523,12 +1053,69 @@ footer{background:var(--ink);padding:clamp(2rem,5vw,3rem) clamp(1rem,5vw,2rem);p
         </div>
       </div>
       <div class="reveal d3">
-        <div class="sk-lbl">Core Competencies</div>
+        <div class="sk-lbl">Core Technical Competencies</div>
         <div class="tag-cloud">
           <span class="s-tag hi">MPPT Algorithms</span><span class="s-tag">Grid-Connected Inverters</span>
           <span class="s-tag">DC-DC Converters</span><span class="s-tag hi">Artificial Neural Networks</span>
           <span class="s-tag">Fault Detection</span><span class="s-tag">PV System Design</span>
           <span class="s-tag">Boost Converter</span><span class="s-tag">Power System Protection</span>
+        </div>
+      </div>
+      <div class="reveal d4">
+        <div class="sk-lbl">Soft Skills</div>
+        <div class="tag-cloud">
+          <span class="s-tag">Leadership</span><span class="s-tag">Event Management</span>
+          <span class="s-tag">Team Coordination</span><span class="s-tag">Analytical Thinking</span>
+          <span class="s-tag">Problem Solving</span><span class="s-tag">Structured Learning</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="eye reveal" style="margin-top:3rem">Advanced Skills</div>
+    <h3 class="sh2 reveal" style="font-size:clamp(1.2rem,3vw,1.8rem);margin-bottom:1rem">Key Skills with <em>Evidence</em></h3>
+    <div class="adv-grid">
+      <div class="adv-card reveal d1">
+        <div class="adv-top">
+          <div class="adv-ico">🧠</div>
+          <div><div class="adv-name">AI &amp; Machine Learning</div><div class="adv-cat">Technical</div></div>
+        </div>
+        <p class="adv-desc">Designed and trained a Multilayer Perceptron (MLP) for real-time fault classification in electrical distribution networks. Applied feature engineering, data normalization, and Levenberg–Marquardt backpropagation.</p>
+        <div class="adv-evidence">
+          <div class="adv-ev-lbl">Evidence</div>
+          <div class="adv-ev-val"><strong>95% classification accuracy</strong>, sub-30ms response — validated on a real 11 kV feeder case study</div>
+        </div>
+      </div>
+      <div class="adv-card reveal d2">
+        <div class="adv-top">
+          <div class="adv-ico">⚙️</div>
+          <div><div class="adv-name">Power Electronics Design</div><div class="adv-cat">Technical</div></div>
+        </div>
+        <p class="adv-desc">Designed a physical boost converter circuit (MT3608) with Li-ion battery management and USB output regulation. Built and validated entirely on hardware, including protection circuitry.</p>
+        <div class="adv-evidence">
+          <div class="adv-ev-lbl">Evidence</div>
+          <div class="adv-ev-val"><strong>80–90% efficiency</strong>, stable 1A output — tested on Arduino boards and mobile devices</div>
+        </div>
+      </div>
+      <div class="adv-card reveal d3">
+        <div class="adv-top">
+          <div class="adv-ico">🌞</div>
+          <div><div class="adv-name">Renewable Energy Simulation</div><div class="adv-cat">Technical</div></div>
+        </div>
+        <p class="adv-desc">Modeled a full grid-connected PV inverter system in MATLAB/Simulink with MPPT control, DC-DC conversion, and grid synchronization stages.</p>
+        <div class="adv-evidence">
+          <div class="adv-ev-lbl">Evidence</div>
+          <div class="adv-ev-val">THD below <strong>5%</strong>, tested across seasonal irradiance profiles, full simulation in Simulink</div>
+        </div>
+      </div>
+      <div class="adv-card reveal d4">
+        <div class="adv-top">
+          <div class="adv-ico">🏆</div>
+          <div><div class="adv-name">Leadership &amp; Management</div><div class="adv-cat">Soft Skill</div></div>
+        </div>
+        <p class="adv-desc">Served as Event Management Head at Bulls &amp; Bears — coordinating teams, managing timelines, and delivering successful events under high-pressure, deadline-driven conditions.</p>
+        <div class="adv-evidence">
+          <div class="adv-ev-lbl">Evidence</div>
+          <div class="adv-ev-val">Successfully led multiple events; recognized for <strong>ownership, execution, and adaptability</strong> by seniors</div>
         </div>
       </div>
     </div>
@@ -541,21 +1128,35 @@ footer{background:var(--ink);padding:clamp(2rem,5vw,3rem) clamp(1rem,5vw,2rem);p
 <section class="section" id="education">
   <div class="section-inner">
     <div class="eye reveal">Academic</div>
-    <h2 class="sh2 reveal">Education</h2>
+    <h2 class="sh2 reveal">Education &amp; <em>Certifications</em></h2>
     <div class="edu-card reveal">
       <div class="edu-ico">🎓</div>
       <div>
         <div class="edu-deg">B.Tech in Electrical Engineering</div>
         <div class="edu-inst">Pandit Deendayal Energy University</div>
-        <div class="edu-period">2024 – 2027 · Gandhinagar, Gujarat</div>
+        <div class="edu-period">August 2024 – May 2027 · Gandhinagar, Gujarat</div>
         <div class="edu-cgpa">⭐ CGPA: 7.5 / 10.0</div>
         <div class="sk-lbl" style="margin-bottom:.6rem">Relevant Coursework</div>
         <div class="c-list">
-          <span class="c-tag">Power Electronics</span><span class="c-tag">Renewable Energy Systems</span>
-          <span class="c-tag">Electric Machines</span><span class="c-tag">Control Systems</span>
-          <span class="c-tag">Digital Signal Processing</span><span class="c-tag">Circuit Analysis</span>
-          <span class="c-tag">Microcontrollers</span><span class="c-tag">Smart Grid Technologies</span>
+          <span class="c-tag">Electric Drives</span>
+          <span class="c-tag">Renewable Energy Engineering</span>
+          <span class="c-tag">Power Electronics</span>
+          <span class="c-tag">Linear Control Theory</span>
+          <span class="c-tag">Hybrid EV Technologies</span>
+          <span class="c-tag">Electric Machines</span>
+          <span class="c-tag">Microcontrollers</span>
+          <span class="c-tag">Smart Grid Technologies</span>
         </div>
+      </div>
+    </div>
+    <div class="cert-row reveal">
+      <div class="cert-card">
+        <div class="cert-ico">📜</div>
+        <div>
+          <div class="cert-name">Understanding Incubation &amp; Entrepreneurship</div>
+          <div class="cert-meta">NPTEL · IIT Certification</div>
+        </div>
+        <div class="cert-score">97/100</div>
       </div>
     </div>
   </div>
@@ -567,67 +1168,149 @@ footer{background:var(--ink);padding:clamp(2rem,5vw,3rem) clamp(1rem,5vw,2rem);p
 <section class="section stripe" id="projects">
   <div class="section-inner">
     <div class="eye reveal">Work</div>
-    <h2 class="sh2 reveal">Featured <em>Projects</em></h2>
+    <h2 class="sh2 reveal">Interdisciplinary <em>Projects</em></h2>
     <div class="proj-grid">
+
+      <!-- Project 1 -->
       <div class="proj-card reveal d1">
         <div class="proj-top">
           <div class="proj-num">01</div>
           <div class="proj-icon">🔋</div>
           <div class="proj-title">USB 5V Power Bank</div>
-          <div class="proj-sub">Boost Converter Design</div>
+          <div class="proj-sub">Hardware · Boost Converter Design</div>
         </div>
         <div class="proj-body">
-          <p class="proj-desc">Designed and simulated a compact boost converter to step up battery voltage for USB 5V output — focused on efficiency and ripple minimization.</p>
+          <p class="proj-desc"><strong>Objective:</strong> Design a compact, efficient portable power bank converting 3.7V Li-ion battery output to stable 5V USB supply for small electronics.</p>
           <div class="proj-achs">
-            <div class="ach"><div class="ach-box">✓</div>Stable 5V output with &lt;2% ripple</div>
-            <div class="ach"><div class="ach-box">✓</div>Optimized switching for thermal performance</div>
-            <div class="ach"><div class="ach-box">✓</div>Validated in PSIM simulation environment</div>
+            <div class="ach"><div class="ach-box">✓</div>80–90% conversion efficiency, stable 1A output</div>
+            <div class="ach"><div class="ach-box">✓</div>Full battery protection (overcharge, over-discharge, short-circuit)</div>
+            <div class="ach"><div class="ach-box">✓</div>Validated with Arduino boards and mobile devices</div>
           </div>
           <div class="proj-tools">
-            <span class="t-tag">PSIM</span><span class="t-tag">MATLAB</span><span class="t-tag">Circuit Design</span>
+            <span class="t-tag">MT3608</span><span class="t-tag">TP4056</span><span class="t-tag">18650 Li-ion</span><span class="t-tag">Breadboard</span><span class="t-tag">Multimeter</span>
+          </div>
+          <button class="proj-detail-btn" onclick="toggleDetail(this)">
+            Methodology &amp; Challenges
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="proj-detail-panel">
+            <div class="pd-section">
+              <div class="pd-label">Methodology</div>
+              <div class="pd-list">
+                <div class="pd-item">Selected 18650 Li-ion cell as primary energy source</div>
+                <div class="pd-item">Integrated TP4056 module for safe charging with built-in protection</div>
+                <div class="pd-item">Connected MT3608 boost converter to step up 3.7V → 5V</div>
+                <div class="pd-item">Tuned potentiometer on MT3608 for stable 5V output</div>
+                <div class="pd-item">Built and verified circuit on breadboard with multimeter</div>
+                <div class="pd-item">Validated performance with real loads (Arduino, mobile devices)</div>
+              </div>
+            </div>
+            <div class="pd-section">
+              <div class="pd-label">Challenges &amp; Solutions</div>
+              <div class="pd-list">
+                <div class="pd-item">Voltage instability under load → Fine-tuned boost converter and ensured proper grounding</div>
+                <div class="pd-item">Battery safety concerns → Relied on TP4056 protection and verified cutoff limits</div>
+                <div class="pd-item">Efficiency losses → Optimized wiring and reduced unnecessary resistance</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Project 2 -->
       <div class="proj-card reveal d2">
         <div class="proj-top">
           <div class="proj-num">02</div>
           <div class="proj-icon">☀️</div>
           <div class="proj-title">MPPT Grid-Connected PV Inverter</div>
-          <div class="proj-sub">Solar Energy System</div>
+          <div class="proj-sub">Simulation · Solar Energy System</div>
         </div>
         <div class="proj-body">
-          <p class="proj-desc">Developed an MPPT-controlled grid-connected PV inverter to maximize solar extraction under varying irradiance and temperature.</p>
+          <p class="proj-desc"><strong>Objective:</strong> Design and simulate a grid-connected solar PV inverter with MPPT control to maximize energy extraction under varying irradiance and temperature.</p>
           <div class="proj-achs">
             <div class="ach"><div class="ach-box">✓</div>Perturb &amp; Observe MPPT implemented</div>
             <div class="ach"><div class="ach-box">✓</div>Grid sync with THD below 5%</div>
-            <div class="ach"><div class="ach-box">✓</div>Full PV array + inverter in Simulink</div>
             <div class="ach"><div class="ach-box">✓</div>Tested across seasonal irradiance profiles</div>
+            <div class="ach"><div class="ach-box">✓</div>Full PV array + inverter modeled in Simulink</div>
           </div>
           <div class="proj-tools">
             <span class="t-tag">MATLAB</span><span class="t-tag">Simulink</span><span class="t-tag">SAM</span><span class="t-tag">Power World</span>
           </div>
+          <button class="proj-detail-btn" onclick="toggleDetail(this)">
+            Methodology &amp; Challenges
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="proj-detail-panel">
+            <div class="pd-section">
+              <div class="pd-label">Methodology</div>
+              <div class="pd-list">
+                <div class="pd-item">Modeled solar PV array in MATLAB/Simulink for varying irradiance and temperature</div>
+                <div class="pd-item">Implemented Perturb &amp; Observe MPPT to track maximum power point</div>
+                <div class="pd-item">Designed DC-DC converter stage to regulate and stabilize PV output</div>
+                <div class="pd-item">Developed inverter control logic for AC conversion</div>
+                <div class="pd-item">Implemented grid synchronization (voltage, frequency, phase alignment)</div>
+                <div class="pd-item">Analyzed output waveforms and power quality for grid compliance</div>
+              </div>
+            </div>
+            <div class="pd-section">
+              <div class="pd-label">Challenges &amp; Solutions</div>
+              <div class="pd-list">
+                <div class="pd-item">Fluctuating PV output → MPPT algorithm tuning improved tracking accuracy</div>
+                <div class="pd-item">Grid synchronization complexity → Used control techniques to align phase and frequency precisely</div>
+                <div class="pd-item">Simulation instability → Adjusted solver settings and Simulink parameters</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- Project 3 -->
       <div class="proj-card reveal d3">
         <div class="proj-top">
           <div class="proj-num">03</div>
           <div class="proj-icon">🤖</div>
           <div class="proj-title">ANN-Based Fault Detection</div>
-          <div class="proj-sub">AI · Power Systems</div>
+          <div class="proj-sub">AI · Power System Protection</div>
         </div>
         <div class="proj-body">
-          <p class="proj-desc">Trained a neural network for real-time fault detection and classification in transmission lines — LG, LL, LLG, and 3-phase faults.</p>
+          <p class="proj-desc"><strong>Objective:</strong> Develop an AI-based system for fast and accurate fault detection and classification in 11 kV electrical distribution networks.</p>
           <div class="proj-achs">
-            <div class="ach"><div class="ach-box">✓</div><strong>95% classification accuracy</strong></div>
-            <div class="ach"><div class="ach-box">✓</div><strong>Sub-30ms</strong> real-time response</div>
-            <div class="ach"><div class="ach-box">✓</div>Trained on synthetic + field datasets</div>
-            <div class="ach"><div class="ach-box">✓</div>Covers all major fault types</div>
+            <div class="ach"><div class="ach-box">✓</div><strong>95% classification accuracy</strong> — LG, LL, DLG, 3-phase faults</div>
+            <div class="ach"><div class="ach-box">✓</div><strong>Sub-30ms</strong> real-time fault identification</div>
+            <div class="ach"><div class="ach-box">✓</div>Real-world validation: Phase-B LG fault → service restored in &lt;7 min</div>
+            <div class="ach"><div class="ach-box">✓</div>Feature engineering: sequence components, di/dt</div>
           </div>
           <div class="proj-tools">
-            <span class="t-tag">Python</span><span class="t-tag">MATLAB</span><span class="t-tag">ANN</span><span class="t-tag">Simulink</span>
+            <span class="t-tag">Python</span><span class="t-tag">MATLAB</span><span class="t-tag">ANN / MLP</span><span class="t-tag">Simulink</span><span class="t-tag">Confusion Matrix</span>
+          </div>
+          <button class="proj-detail-btn" onclick="toggleDetail(this)">
+            Methodology &amp; Challenges
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="proj-detail-panel">
+            <div class="pd-section">
+              <div class="pd-label">Methodology</div>
+              <div class="pd-list">
+                <div class="pd-item">Simulated 11 kV distribution feeder to generate fault scenario data</div>
+                <div class="pd-item">Extracted features: phase current magnitudes, zero-sequence, negative-sequence voltage, di/dt</div>
+                <div class="pd-item">Preprocessed and normalized data for ANN training</div>
+                <div class="pd-item">Designed MLP with Levenberg–Marquardt backpropagation</div>
+                <div class="pd-item">Evaluated performance using confusion matrix and accuracy metrics</div>
+                <div class="pd-item">Validated on real-world 11 kV radial feeder case study</div>
+              </div>
+            </div>
+            <div class="pd-section">
+              <div class="pd-label">Challenges &amp; Solutions</div>
+              <div class="pd-list">
+                <div class="pd-item">Feature selection complexity → Focused on physically meaningful electrical parameters</div>
+                <div class="pd-item">Overfitting risk → Applied proper training-validation split</div>
+                <div class="pd-item">Real-world variability → Validated model on actual feeder case study</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -646,15 +1329,245 @@ footer{background:var(--ink);padding:clamp(2rem,5vw,3rem) clamp(1rem,5vw,2rem);p
       </div>
       <div class="tech-block reveal d2">
         <div class="tech-head"><span class="tech-icon">⚙️</span><span class="tech-name">Simulation Tools</span></div>
-        <div class="tech-badges"><span class="tb">MATLAB</span><span class="tb">Simulink</span><span class="tb">PSIM</span><span class="tb">SAM</span><span class="tb">Power World</span></div>
+        <div class="tech-badges"><span class="tb">MATLAB</span><span class="tb">Simulink</span><span class="tb">PSIM</span><span class="tb">SAM</span><span class="tb">Power World</span><span class="tb">Logisim</span><span class="tb">Tinkercad</span></div>
       </div>
       <div class="tech-block reveal d3">
         <div class="tech-head"><span class="tech-icon">🧠</span><span class="tech-name">AI / Machine Learning</span></div>
-        <div class="tech-badges"><span class="tb">ANN</span><span class="tb">Neural Networks</span><span class="tb">Fault Classification</span><span class="tb">Data Preprocessing</span></div>
+        <div class="tech-badges"><span class="tb">ANN / MLP</span><span class="tb">Neural Networks</span><span class="tb">Fault Classification</span><span class="tb">Feature Engineering</span><span class="tb">Confusion Matrix</span></div>
       </div>
       <div class="tech-block reveal d4">
         <div class="tech-head"><span class="tech-icon">⚡</span><span class="tech-name">Power Systems</span></div>
-        <div class="tech-badges"><span class="tb">MPPT</span><span class="tb">DC-DC Converters</span><span class="tb">Grid Inverters</span><span class="tb">PV Systems</span><span class="tb">Boost Converter</span></div>
+        <div class="tech-badges"><span class="tb">MPPT</span><span class="tb">DC-DC Converters</span><span class="tb">Grid Inverters</span><span class="tb">PV Systems</span><span class="tb">Boost Converter</span><span class="tb">Grid Sync</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<!-- COLLABORATION & LEADERSHIP -->
+<section class="section stripe" id="collaboration">
+  <div class="section-inner">
+    <div class="eye reveal">Teamwork</div>
+    <h2 class="sh2 reveal">Collaboration &amp; <em>Leadership</em></h2>
+    <div class="collab-grid">
+      <div class="collab-card reveal d1">
+        <div class="collab-ico">🐂</div>
+        <div class="collab-badge">Event Management Head</div>
+        <div class="collab-title">Bulls &amp; Bears — Finance &amp; Markets Club</div>
+        <p class="collab-text">My most significant leadership experience comes from heading event management at Bulls &amp; Bears. This role required coordinating teams, managing timelines, and ensuring execution under strict constraints — where results matter more than effort alone.</p>
+        <div class="role-list">
+          <div class="role-item"><div class="role-dot"></div>Led end-to-end event planning, coordination, and on-ground execution</div>
+          <div class="role-item"><div class="role-dot"></div>Managed multi-person teams with varied commitment levels</div>
+          <div class="role-item"><div class="role-dot"></div>Maintained delivery standards during high-pressure deadlines</div>
+        </div>
+      </div>
+      <div class="collab-card reveal d2">
+        <div class="collab-ico">🤝</div>
+        <div class="collab-title">Conflict Resolution &amp; Team Dynamics</div>
+        <p class="collab-text">One key challenge was handling inconsistent participation from team members. Instead of escalating immediately, I focused on clear communication, setting expectations, and redistributing responsibilities where needed — maintaining team performance without disrupting overall workflow.</p>
+        <div class="role-list">
+          <div class="role-item"><div class="role-dot"></div>Prioritized dialogue over escalation in conflict situations</div>
+          <div class="role-item"><div class="role-dot"></div>Redistributed tasks dynamically to maintain team momentum</div>
+          <div class="role-item"><div class="role-dot"></div>Balanced authority with collaboration to keep everyone aligned</div>
+        </div>
+      </div>
+      <div class="collab-card collab-full reveal">
+        <div class="collab-ico">💡</div>
+        <div class="collab-title">What Seniors Would Say</div>
+        <p class="collab-text" style="margin-bottom:1rem">From a club perspective, seniors describe me as someone who takes <strong>ownership</strong> rather than just responsibility on paper — staying involved on the ground, managing issues as they arise, and keeping the overall experience from suffering. They'd also note I expect the same commitment from others, which sometimes creates friction, but also helps maintain standards within the team.</p>
+        <p class="collab-text">Academically, they'd see me as consistent and serious about understanding concepts deeply — not rushing through topics but taking time to break them down, especially in core electrical subjects. They'd also say I can sometimes get too involved in details when trying to perfect something.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<!-- GLOBAL AWARENESS & ETHICS -->
+<section class="section" id="ethics">
+  <div class="section-inner">
+    <div class="eye reveal">Perspective</div>
+    <h2 class="sh2 reveal">Global Awareness &amp; <em>Ethics</em></h2>
+    <div class="ethics-grid">
+      <div class="eth-card reveal d1">
+        <div class="eth-ico">🌍</div>
+        <div class="eth-title">Global Energy Context</div>
+        <p class="eth-text">From an engineering perspective, energy access and sustainability are no longer optional concerns. With rising global demand and environmental impact, the shift toward renewable energy and efficient systems is critical. My interest in EVs and solar-based systems comes from this larger context — reducing dependency on fossil fuels and improving energy efficiency at scale.</p>
+      </div>
+      <div class="eth-card reveal d2">
+        <div class="eth-ico">⚖️</div>
+        <div class="eth-title">Engineering Ethics</div>
+        <p class="eth-text">Working on systems like power electronics and fault detection carries real responsibility. Engineers must design for safety, reliability, and compliance — not just performance. This has shaped how I approach every design decision in my projects.</p>
+        <div class="eth-examples">
+          <div class="eth-ex"><div class="eth-ex-ico">⚠️</div><span>Inaccurate fault detection → system failures, safety hazards, and outages affecting communities</span></div>
+          <div class="eth-ex"><div class="eth-ex-ico">🔥</div><span>Poorly designed battery systems → fire risks and safety violations in consumer electronics</span></div>
+          <div class="eth-ex"><div class="eth-ex-ico">✅</div><span>Responsibility to design systems that are safe, reliable, and standard-compliant — not just efficient</span></div>
+        </div>
+      </div>
+      <div class="eth-card eth-full reveal">
+        <div class="eth-ico">🔋</div>
+        <div class="eth-title">Personal Reflection</div>
+        <p class="eth-text">Every project I've worked on — from the power bank's safety protection circuits to the ANN fault detection system validated on a real feeder — has reinforced one idea: the engineer's job doesn't end at making something work. It ends when the system is safe, reliable, and ready for the real world. As someone interested in EVs, renewable energy, and smart grids, I see these ethical considerations as central to what it means to build meaningful technology.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<!-- FUTURE GOALS -->
+<section class="section stripe" id="goals">
+  <div class="section-inner">
+    <div class="eye reveal">Aspirations</div>
+    <h2 class="sh2 reveal">Future <em>Goals</em></h2>
+    <div class="goals-wrap">
+      <div class="goal-card reveal d1">
+        <div class="goal-ico">🚀</div>
+        <div class="goal-label">Short Term</div>
+        <div class="goal-title">Industry Experience</div>
+        <p class="goal-text">My immediate goal is to gain hands-on experience in green energy-based companies — particularly in renewable systems, EV technology, and power electronics. I want to move from simulation-driven understanding to real-world system design and optimization.</p>
+      </div>
+      <div class="goal-card reveal d2">
+        <div class="goal-ico">🌱</div>
+        <div class="goal-label">Long Term</div>
+        <div class="goal-title">Sustainable Venture</div>
+        <p class="goal-text">After building sufficient technical expertise and industry exposure, I aim to start my own venture focused on sustainable and innovative energy solutions — bridging the gap between cutting-edge engineering and practical, accessible energy technology.</p>
+      </div>
+      <div class="goal-card goal-full reveal">
+        <div class="goal-ico">📅</div>
+        <div class="goal-label">Roadmap</div>
+        <div class="goal-title">Continuous Improvement Strategy</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+            <div class="tl-content">
+              <div class="tl-period">2024 – 2025 · Now</div>
+              <div class="tl-text">Building foundational knowledge in power electronics, renewables, and AI applications. Completing coursework and hands-on project work at PDEU.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+            <div class="tl-content">
+              <div class="tl-period">2025 – 2026 · Next</div>
+              <div class="tl-text">Secure an internship at a green energy or EV company. Deepen practical exposure to real-world power systems and industry workflows.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+            <div class="tl-content">
+              <div class="tl-period">2026 – 2027 · Final Year</div>
+              <div class="tl-text">Complete B.Tech with a strong technical portfolio. Explore advanced research or industry roles in smart grids, EV systems, or Industrial IoT.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+            <div class="tl-content">
+              <div class="tl-period">2027 onwards · Vision</div>
+              <div class="tl-text">Launch a venture in sustainable energy innovation. Contribute to solutions that make clean energy more efficient, accessible, and reliable.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<!-- CONCLUSION & SELF ASSESSMENT -->
+<section class="section" id="conclusion">
+  <div class="section-inner">
+    <div class="eye reveal">Reflection</div>
+    <h2 class="sh2 reveal">Conclusion &amp; <em>Self-Assessment</em></h2>
+    <div class="concl-card reveal">
+      <p class="concl-intro">Looking back, the most significant achievement has been learning to operate at both a <strong>technical and managerial level simultaneously</strong> — delivering engineering projects while leading a team in a competitive club environment. These parallel tracks have shaped how I approach problems, manage time, and take ownership of outcomes.</p>
+      <div class="concl-row">
+        <div class="concl-item">
+          <div class="concl-item-lbl">Biggest Achievement</div>
+          <div class="concl-item-val">Leading event execution as Event Management Head at Bulls &amp; Bears while maintaining academic consistency — demonstrating that technical and managerial responsibilities can coexist.</div>
+        </div>
+        <div class="concl-item">
+          <div class="concl-item-lbl">What I'd Do Differently</div>
+          <div class="concl-item-val">Start practical exposure earlier. In the initial phase, I was more focused on structured academics. Earlier project and internship engagement would have accelerated the connection between theory and real-world application.</div>
+        </div>
+      </div>
+      <div class="concl-item-lbl" style="margin-bottom:.8rem">Areas for Growth</div>
+      <div class="tag-cloud">
+        <span class="s-tag">Earlier practical exposure</span>
+        <span class="s-tag">Managing bandwidth under overcommitment</span>
+        <span class="s-tag">Speed vs. perfection balance</span>
+        <span class="s-tag">Continuous upskilling pace</span>
+      </div>
+    </div>
+    <div class="eye reveal" style="margin-top:2.5rem">Analysis</div>
+    <h3 class="sh2 reveal" style="font-size:clamp(1.2rem,3vw,1.8rem);margin-bottom:.5rem">SWOT <em>Analysis</em></h3>
+    <div class="swot-grid reveal">
+      <div class="swot-card swot-s">
+        <div class="swot-label"><span class="swot-ico">💪</span> Strengths</div>
+        <div class="swot-list">
+          <div class="swot-item">Strong discipline and structured routine</div>
+          <div class="swot-item">Analytical mindset — deep concept understanding</div>
+          <div class="swot-item">Ability to take initiative and lead from the front</div>
+          <div class="swot-item">Balanced interest in technical and non-technical domains</div>
+        </div>
+      </div>
+      <div class="swot-card swot-w">
+        <div class="swot-label"><span class="swot-ico">⚠️</span> Weaknesses</div>
+        <div class="swot-list">
+          <div class="swot-item">Tendency to overcommit, stretching bandwidth</div>
+          <div class="swot-item">Spending too much time perfecting details</div>
+          <div class="swot-item">Late realization of early practical exposure value</div>
+        </div>
+      </div>
+      <div class="swot-card swot-o">
+        <div class="swot-label"><span class="swot-ico">🌟</span> Opportunities</div>
+        <div class="swot-list">
+          <div class="swot-item">Growing demand in EVs and Industrial IoT</div>
+          <div class="swot-item">Access to simulation tools and technical projects</div>
+          <div class="swot-item">Leadership experience for bigger roles</div>
+        </div>
+      </div>
+      <div class="swot-card swot-t">
+        <div class="swot-label"><span class="swot-ico">🎯</span> Threats</div>
+        <div class="swot-list">
+          <div class="swot-item">Highly competitive field requiring continuous upskilling</div>
+          <div class="swot-item">Risk of spreading focus too thin</div>
+          <div class="swot-item">Fast-changing technology landscape</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<!-- TESTIMONIALS -->
+<section class="section stripe" id="testimonials">
+  <div class="section-inner">
+    <div class="eye reveal">Recognition</div>
+    <h2 class="sh2 reveal"><em>Testimonials</em></h2>
+    <div class="test-grid">
+      <div class="test-card reveal d1">
+        <p class="test-quote">Anand is someone who takes ownership rather than just responsibility on paper. As Event Management Head, he ensured things actually got done — staying involved on the ground, managing issues as they came, and making sure the overall experience never suffered. Dependable under pressure, and consistent in execution.</p>
+        <div class="test-author">
+          <div class="test-avatar">S</div>
+          <div><div class="test-name">Senior Member</div><div class="test-role">Bulls &amp; Bears · Finance Club, PDEU</div></div>
+        </div>
+      </div>
+      <div class="test-card reveal d2">
+        <p class="test-quote">Academically, Anand is consistent and serious about understanding concepts — not just scoring marks. He takes time to break things down, especially in core electrical subjects, and makes sure he understands the "why" before moving on. He balances theory with application better than most.</p>
+        <div class="test-author">
+          <div class="test-avatar">P</div>
+          <div><div class="test-name">Peer &amp; Senior</div><div class="test-role">B.Tech Electrical Engineering, PDEU</div></div>
+        </div>
+      </div>
+      <div class="test-card reveal d3">
+        <p class="test-quote">What stands out about Anand is that he expects the same level of commitment he puts in from everyone around him. That creates friction sometimes, but it also raises the bar. In high-stakes situations, you want someone like him driving execution — he doesn't let things slip through.</p>
+        <div class="test-author">
+          <div class="test-avatar">B</div>
+          <div><div class="test-name">Club Senior</div><div class="test-role">Event Lead · Bulls &amp; Bears, PDEU</div></div>
+        </div>
       </div>
     </div>
   </div>
@@ -664,11 +1577,11 @@ footer{background:var(--ink);padding:clamp(2rem,5vw,3rem) clamp(1rem,5vw,2rem);p
   <div class="foot-inner">
     <div class="foot-logo">Anand<span>.</span></div>
     <div class="foot-links">
-      <a href="mailto:anand@example.com">Email</a>
+      <a href="mailto:anandzanzmeriya@gmail.com">Email</a>
       <a href="tel:+918866984252">Phone</a>
       <a href="https://www.linkedin.com/in/anand-zanzmeriya-4a40b8298/" target="_blank">LinkedIn</a>
     </div>
-    <div class="foot-copy">Junagadh, Gujarat · India</div>
+    <div class="foot-copy">Junagadh, Gujarat · India · Submission 2025</div>
   </div>
 </footer>
 
@@ -679,70 +1592,116 @@ window.addEventListener('load', () => {
 });
 
 /* THEME */
-const btn = document.getElementById('themeBtn'), html = document.documentElement;
-const st = localStorage.getItem('az-theme') || 'light';
-html.setAttribute('data-theme', st);
-btn.textContent = st === 'dark' ? '☀️' : '🌙';
-btn.addEventListener('click', () => {
-  const n = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-  html.setAttribute('data-theme', n);
-  btn.textContent = n === 'dark' ? '☀️' : '🌙';
-  localStorage.setItem('az-theme', n);
+const themeBtn = document.getElementById('themeBtn');
+const html = document.documentElement;
+const savedTheme = localStorage.getItem('az-theme') || 'light';
+html.setAttribute('data-theme', savedTheme);
+themeBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+themeBtn.addEventListener('click', () => {
+  const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  themeBtn.textContent = next === 'dark' ? '☀️' : '🌙';
+  localStorage.setItem('az-theme', next);
 });
 
-/* HAMBURGER + DRAWER */
-const hbg = document.getElementById('hamburger');
-const mMenu = document.getElementById('mobileMenu');
-hbg.addEventListener('click', () => {
-  const open = hbg.classList.toggle('open');
-  mMenu.classList.toggle('open', open);
+/* HAMBURGER + MOBILE DRAWER */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  const open = hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open', open);
   document.body.style.overflow = open ? 'hidden' : '';
 });
 document.querySelectorAll('.mob-link').forEach(a => {
   a.addEventListener('click', () => {
-    hbg.classList.remove('open');
-    mMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
     document.body.style.overflow = '';
   });
 });
 
 /* STICKY NAV */
 const navEl = document.getElementById('nav');
-window.addEventListener('scroll', () => navEl.classList.toggle('scrolled', scrollY > 70), {passive: true});
+window.addEventListener('scroll', () => {
+  navEl.classList.toggle('scrolled', window.scrollY > 70);
+}, { passive: true });
 
-/* REVEAL */
-const rio = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); }});
-}, {threshold: .08, rootMargin: '0px 0px -50px 0px'});
-document.querySelectorAll('.reveal').forEach(e => rio.observe(e));
+/* SCROLL REVEAL */
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: .08, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-/* CURSOR (desktop only) */
+/* CUSTOM CURSOR */
 if (matchMedia('(pointer:fine)').matches) {
-  const cur = document.getElementById('cur'), ring = document.getElementById('cring');
+  const cur = document.getElementById('cur');
+  const ring = document.getElementById('cring');
   let mx = 0, my = 0, rx = 0, ry = 0;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cur.style.left = mx + 'px'; cur.style.top = my + 'px'; });
-  (function tick() { rx += (mx - rx) * .13; ry += (my - ry) * .13; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(tick); })();
-  document.querySelectorAll('a,button,.proj-card,.kpi,.s-tag,.tb,.t-tag').forEach(el => {
-    el.addEventListener('mouseenter', () => { cur.style.transform = 'translate(-50%,-50%) scale(2.8)'; ring.style.opacity = '.9'; ring.style.width = '50px'; ring.style.height = '50px'; });
-    el.addEventListener('mouseleave', () => { cur.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.opacity = '.45'; ring.style.width = '32px'; ring.style.height = '32px'; });
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cur.style.left = mx + 'px';
+    cur.style.top = my + 'px';
+  });
+  (function tick() {
+    rx += (mx - rx) * .13;
+    ry += (my - ry) * .13;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(tick);
+  })();
+  const hoverEls = document.querySelectorAll('a, button, .proj-card, .kpi, .s-tag, .tb, .t-tag, .adv-card, .test-card, .toc-item');
+  hoverEls.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cur.style.transform = 'translate(-50%,-50%) scale(2.8)';
+      ring.style.opacity = '.9';
+      ring.style.width = '50px';
+      ring.style.height = '50px';
+    });
+    el.addEventListener('mouseleave', () => {
+      cur.style.transform = 'translate(-50%,-50%) scale(1)';
+      ring.style.opacity = '.45';
+      ring.style.width = '32px';
+      ring.style.height = '32px';
+    });
   });
 }
 
-/* COUNT UP */
-function count(id, target, suffix, dec, dur) {
-  const el = document.getElementById(id); if (!el) return;
-  const s = performance.now();
-  (function f(ts) {
-    const p = Math.min((ts - s) / dur, 1), e = 1 - Math.pow(1 - p, 3), v = target * e;
-    el.textContent = (dec ? v.toFixed(1) : Math.round(v)) + suffix;
-    if (p < 1) requestAnimationFrame(f);
-  })(s);
+/* COUNT-UP ANIMATION */
+function countUp(id, target, suffix, decimals, duration) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const start = performance.now();
+  (function frame(ts) {
+    const progress = Math.min((ts - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const val = target * eased;
+    el.textContent = (decimals ? val.toFixed(1) : Math.round(val)) + suffix;
+    if (progress < 1) requestAnimationFrame(frame);
+  })(start);
 }
-const cio = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { count('k1',95,'%',false,1200); count('k2',7.5,'',true,1400); count('k3',3,'+',false,900); cio.disconnect(); }});
-}, {threshold: .5});
-const sc = document.querySelector('.sum-card');
-if (sc) cio.observe(sc);
+const countObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      countUp('k1', 95, '%', false, 1200);
+      countUp('k2', 7.5, '', true, 1400);
+      countUp('k3', 3, '+', false, 900);
+      countObserver.disconnect();
+    }
+  });
+}, { threshold: .5 });
+const sumCard = document.querySelector('.sum-card');
+if (sumCard) countObserver.observe(sumCard);
+
+/* PROJECT DETAIL ACCORDION */
+function toggleDetail(btn) {
+  btn.classList.toggle('open');
+  btn.nextElementSibling.classList.toggle('open');
+}
 </script>
 </body>
 </html>
